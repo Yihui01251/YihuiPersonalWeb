@@ -1,0 +1,9 @@
+
+//變數
+$color-background:rgba(255, 221, 221, 0.932);
+
+@import"../../node_modules/bootstrap/scss/bootstrap.scss";
+
+.App-header{
+    background-color: $color-background;
+}
