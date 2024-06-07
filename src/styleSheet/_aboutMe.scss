@@ -1,0 +1,110 @@
+.aboutMe-Banner{
+    width: 100%;
+    height: fit-content;
+    background: url(../../images/aboutMe_bannerBg.png);
+    background-repeat: no-repeat;
+    background-position: center 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 50px;
+    padding-top: 75px;
+
+    .aboutMe-info{
+        width: auto;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        column-gap: 60px;
+        justify-content: center;
+        align-items: center;
+
+        .aboutMe-img{
+             width: 20%;
+             position: relative;
+             &::before{
+                content: '衣櫃';
+                width:65px;
+                height: 65px;
+                text-align: center;
+                color: $second-color-white;
+                line-height: 65px;
+                font-weight: 600;
+                border-radius: 90px;
+                background-color: $color-wave;
+                position: absolute;
+                right: -30px;
+                bottom: 0;
+                
+             }
+        }
+
+        .aboutMe-keyword{
+            width: fit-content;
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            row-gap: 20px;
+
+            h1{
+                font-size: 2rem;
+                width: fit-content;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                column-gap: 10px;
+            }
+        }
+    }
+
+    .aboutMe-intro{
+        width: 600px;
+        padding: 50px;
+        background-color: $background-color-beach-white;
+        border-radius: 30px;
+        box-shadow: -2px -4px 5px 0px  $box-shadow;
+        color: $font-color-deepBlue;
+        line-height: 30px;
+    }
+}
+
+.aboutMe-content{
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+}
+.aboutMe-experience{
+    img{
+        width: 99%;
+    }
+}
+
+.aboutMe-skills{
+    width: 100%;
+    height: auto;
+    padding-left: 20px;
+    .aboutMe-title{
+        width: 130px;
+        padding-bottom: 20px;
+        img{
+            width: 60%;
+        }
+    }
+    .skills-container{
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+
+        a{
+            &:hover{
+                scale: 110%;
+            }
+        }
+        img{
+            width: 80%;
+        }
+    }
+}
