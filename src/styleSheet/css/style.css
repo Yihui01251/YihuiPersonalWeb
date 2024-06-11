@@ -1,4 +1,5 @@
 @charset "UTF-8";
+/* UTF-8編碼確保文件中的中文字符或其他ASCII字符能夠被正確解析和顯示 */
 /*!
  * Bootstrap  v5.3.3 (https://getbootstrap.com/)
  * Copyright 2011-2024 The Bootstrap Authors
@@ -11845,8 +11846,8 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-/* UTF-8編碼確保文件中的中文字符或其他ASCII字符能夠被正確解析和顯示 */
 /* 導入字體 */
+/* 導入 */
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain) */
@@ -12390,7 +12391,7 @@ section {
 }
 .index-aboutMe .aboutMe-content::after {
   position: absolute;
-  content: url("../../images/decorate-aboutMe03.png");
+  content: url("/images/decorate-aboutMe03.png");
   background-size: 10vw;
   display: block;
   width: 300px;
@@ -12410,7 +12411,7 @@ section {
 .index-aboutMe .aboutMe-content .content-intro::after {
   /* 打招呼裝飾雲 */
   position: absolute;
-  content: url(../../images/decorate-aboutMe02.png);
+  content: url("/images/decorate-aboutMe02.png");
   display: block;
   scale: 100%;
   width: auto;
@@ -12460,7 +12461,7 @@ section {
 .index-portfolioInfo {
   width: 100%;
   height: auto;
-  background-image: url(../../images/index-portfolio.png);
+  background-image: url(../images/index-portfolio.png);
   background-size: 70% 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -12538,7 +12539,7 @@ section {
   justify-content: center;
   align-items: center;
   row-gap: 19px;
-  background-image: url(../../images/simple_learnNote.png);
+  background-image: url(../images/simple_learnNote.png);
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -12571,7 +12572,7 @@ section {
   position: relative;
 }
 .index-contact::before {
-  content: url(../../images/1920wave.png);
+  content: url(../images/1920wave.png);
   position: absolute;
   width: 100%;
   height: auto;
@@ -12599,7 +12600,7 @@ section {
   position: relative;
 }
 .index-contact .contact-bottom::before {
-  content: url(../../images/beach.png);
+  content: url(./images/beach.png);
   position: absolute;
   width: auto;
   height: 200px;
@@ -12684,7 +12685,7 @@ section {
   flex: 0 1 auto;
   min-height: 165px;
   height: 25vw;
-  background: url(../../images/portfolio-file.png);
+  background: url(./images/portfolio-file.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
