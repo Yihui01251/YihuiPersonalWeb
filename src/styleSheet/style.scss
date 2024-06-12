@@ -4,40 +4,46 @@
 @import"../../node_modules/bootstrap/scss/bootstrap.scss";
 /* 導入字體 */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+@font-face {
+    font-family: 'GenJyuuGothic';
+    src: url('../assets/fonts/genjyuugothic-20150607/GenJyuuGothic-Regular.ttf') format('truetype');
+    font-weight: normal;
+  }
+
 /* 導入 */
 @import "reset";
 @import "_varible";
 /* 字大小 */
 h1 {
-    font-family: "Noto Serif TC", serif;
+    font-family: "GenJyuuGothic","Noto Serif TC", serif;
     font-size: 3.3rem;
     font-weight: 900;
     font-style: normal;
     letter-spacing: 0.1rem;
 }
 h2 {
-    font-family:  "Noto Serif TC", serif;
+    font-family: "GenJyuuGothic", "Noto Serif TC",serif;
     font-size: 2.25rem;
     font-weight: 700;
     font-style: normal;
     letter-spacing: 0.1rem;
 }
 h3 {
-    font-family: "Noto Serif TC", serif;
+    font-family: "GenJyuuGothic","Noto Serif TC", serif;
     font-size: 1.5rem;
     font-weight: 600;
     font-style: normal;
     letter-spacing: 0.1rem;
 }
 p {
-    font-family: "Noto Serif TC", serif;
+    font-family: "GenJyuuGothic","Noto Serif TC", serif;
     font-size: 1rem;//1rem
     font-weight: 500;
     font-style: normal;
     letter-spacing: 0.1rem;
 }
 small {
-    font-family: "Noto Serif TC", serif;
+    font-family:"Noto Serif TC", "Noto Serif TC", serif;
     font-size: 0.75rem;
     font-weight: 200;
     font-style: normal;
@@ -70,7 +76,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     align-content: center;
     justify-items: center;
     overflow-x: hidden;
@@ -91,6 +96,7 @@ header {
     padding: 1.1vh 4.3vw;
 }
 .logo{
+    width: 200px;
     background: transparent;
 }
 /* 導覽列容器 */
@@ -151,7 +157,7 @@ footer{
         grid-row: 1/3;
         grid-column: 3;
 
-        width: 150px;
+        width: 170px;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -442,7 +448,7 @@ section {
         // }
         &::after {
             position: absolute;
-            content: url('/images/decorate-aboutMe03.png');
+            content: url('../assets/images/decorate-aboutMe03.png');
             background-size: 10vw;
             display: block;
             width: 300px;
@@ -461,7 +467,7 @@ section {
             &::after {
                 /* 打招呼裝飾雲 */
                 position: absolute;
-                content: url('/images/decorate-aboutMe02.png');
+                content: url('../assets/images/decorate-aboutMe02.png');
                 display: block;
                 scale: 100%;
                 width: auto;
@@ -520,7 +526,7 @@ section {
 .index-portfolioInfo {
     width: 100%;
     height: auto;
-    background-image: url(../images/index-portfolio.png);
+    background-image: url('../assets/images/index-portfolio.png');
     background-size: 70% 100%;
     background-repeat: no-repeat;
     background-position: center;
@@ -580,7 +586,7 @@ section {
 /*  */
 .index-noteContainer {
     width: 75%;
-    height: fit-content;
+    height: auto;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -590,10 +596,10 @@ section {
 }
 /* 簡略文章元件 */
 .simple-learnNoteComponent { 
-   // min-width: 300px;
-    width: 300px;
-    min-height: 185px;
-    height: fit-content;
+    min-width: 200px;
+    width: 90%;
+    min-height: 195px;
+    height: auto;
    
     color: $color-wave;
 
@@ -602,12 +608,14 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    row-gap: 19px;
+    row-gap: 35px;
+    margin: 0 auto;
     //padding-top: 38px;
    
-    background-image: url(../images/simple_learnNote.png);
+    background-image: url('../assets/images/simple_learnNote.png');
     background-repeat: no-repeat;
     background-position: center;
+    background-size: 90%;
     // &::after{
     //     content: url(../../images/simple_learnNote.png);
     //     width: 300px;
@@ -662,7 +670,7 @@ section {
 
     position: relative;
     &::before{
-        content: url(../images/1920wave.png);
+        content: url('../assets/images/1920wave.png');
         position: absolute;
         width: 100%;
         height: auto;
@@ -701,7 +709,7 @@ section {
 
         position: relative;
     &::before{
-        content: url(./images/beach.png);
+        content: url('../assets/images/beach.png');
         position: absolute;
         width: auto;
         height: 200px;
@@ -804,7 +812,7 @@ section {
     flex: 0 1 auto;
     min-height: 165px;
     height: 25vw;
-    background: url(./images/portfolio-file.png);
+    background: url(../assets/images/portfolio-file.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100%;

@@ -1,8 +1,8 @@
 {
-  "name": "react-cra",
+  "name": "YihuiPersonalWeb",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Yihui01251.github.io/react-cra",
+  "homepage": "https://Yihui01251.github.io/YihuiPersonalWeb",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -13,8 +13,10 @@
     "jquery": "^3.7.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-router-dom": "^6.23.1",
     "react-scripts": "5.0.1",
     "sass": "^1.77.4",
+    "swiper": "^11.1.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
