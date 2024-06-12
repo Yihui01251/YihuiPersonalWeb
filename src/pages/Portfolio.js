@@ -7,8 +7,8 @@ import protfolio02Img from '../assets/images/protfolio02.png';
 
 const Portfolio = () => {
   return (
-    <main class="blogArea">
-      <div class="section-intro">
+    <main className="blogArea">
+      <div className="section-intro">
         <img src={meImg} alt="" />
         <p>詹怡慧</p>
         <p>
@@ -17,23 +17,23 @@ const Portfolio = () => {
           我的網站展示設計和程式的作品和學習經歷，正在朝成為前端工程師的方向前進。
         </p>
       </div>
-      <div class="section-content">
-        <div class="btnContainer">
+      <div className="section-content">
+        <div className="btnContainer">
           <button>全部</button>
           <button>程式</button>
           <button>設計</button>
           <button>其他</button>
         </div>
-        <div class="contentContainer">
-          <a href="#" class="portfolio-file">
+        <div className="contentContainer">
+          <a href="#" className="portfolio-file">
             <h3>Figma</h3>
             <img src={protfolio01Img} alt="" />
           </a>
-          <a href="#" class="portfolio-file">
+          <a href="#" className="portfolio-file">
             <h3>現在想打球</h3>
             <img src={protfolio02Img} alt="" />
           </a>
-          <a href="#" class="portfolio-file">
+          <a href="#" className="portfolio-file">
             <h3>Figma</h3>
             <img src={protfolio01Img} alt="" />
           </a>

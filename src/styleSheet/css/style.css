@@ -12022,6 +12022,7 @@ h1, .h1 {
   font-weight: 900;
   font-style: normal;
   letter-spacing: 0.1rem;
+  color: rgb(11, 34, 40);
 }
 
 h2, .h2 {
@@ -12030,6 +12031,7 @@ h2, .h2 {
   font-weight: 700;
   font-style: normal;
   letter-spacing: 0.1rem;
+  color: rgb(11, 34, 40);
 }
 
 h3, .h3 {
@@ -12038,6 +12040,7 @@ h3, .h3 {
   font-weight: 600;
   font-style: normal;
   letter-spacing: 0.1rem;
+  color: rgb(11, 34, 40);
 }
 
 p {
@@ -12046,6 +12049,7 @@ p {
   font-weight: 500;
   font-style: normal;
   letter-spacing: 0.1rem;
+  color: rgb(11, 34, 40);
 }
 
 small, .small {
@@ -12054,6 +12058,7 @@ small, .small {
   font-weight: 200;
   font-style: normal;
   letter-spacing: 0.1rem;
+  color: rgb(11, 34, 40);
 }
 
 /* Global */
@@ -12077,7 +12082,7 @@ body {
   width: 100vw;
   min-height: 1080px;
   height: auto;
-  background-image: linear-gradient(rgba(172, 211, 222, 0.25) 15%, rgba(152, 198, 205, 0.3) 35%, rgba(186, 211, 213, 0.53) 60%, rgba(144, 192, 198, 0.45) 80%, rgba(242, 237, 232, 0.65) 100%);
+  background-image: linear-gradient(rgba(172, 211, 222, 0.25) 15%, rgba(144, 192, 198, 0.65) 35%, rgba(152, 198, 205, 0.3) 60%, rgba(186, 211, 213, 0.53) 80%, rgba(242, 237, 232, 0.65) 100%);
   color: #555;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Noto Serif TC", "Open Sans", "Helvetica Neue", sans-serif, "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Sans TC";
   display: flex;
@@ -12091,7 +12096,7 @@ body {
 header {
   width: 100%;
   height: 15%;
-  background-color: rgba(142, 142, 142, 0.07);
+  background-color: rgb(200, 219, 225);
   box-shadow: 0px 4px 4px 0 rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: row;
@@ -12189,7 +12194,7 @@ section {
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
   opacity: 0.8;
 }
-.button:hover {
+b .button:hover {
   opacity: 1;
 }
 .button:active {
@@ -12214,6 +12219,121 @@ section {
   line-height: 26px;
   text-align: center;
   padding: 5px 15px;
+}
+
+/* 簡略文章元件 */
+.simple-learnNoteComponent {
+  min-width: 200px;
+  width: 100%;
+  min-height: 255px;
+  height: auto;
+  color: rgb(12, 90, 103);
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 55px;
+  margin: 0 auto;
+  background-image: url("../assets/images/simple_learnNote.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+}
+.simple-learnNoteComponent h3, .simple-learnNoteComponent .h3 {
+  max-width: 80%;
+  height: 60px;
+  line-height: 60px;
+  overflow: hidden;
+  text-emphasis: text;
+}
+.simple-learnNoteComponent .hugTag {
+  width: 100%;
+  height: 30px;
+  position: relative;
+}
+.simple-learnNoteComponent .tag-card {
+  /* 相對位置 */
+  position: absolute;
+  right: 40%;
+  bottom: 0;
+  color: rgb(11, 34, 40);
+}
+
+/* 通用在作品集和學習紀錄 */
+.blogArea {
+  display: flex;
+  flex-direction: row;
+}
+
+.section-intro {
+  /*  */
+  max-width: 285px;
+  width: 35%;
+  min-height: 77vh;
+  background: linear-gradient(-45deg, rgba(178, 206, 210, 0.5) 15%, rgba(126, 176, 183, 0.5) 35%, rgba(125, 173, 181, 0.5) 60%, rgba(128, 183, 190, 0.5) 80%, rgba(12, 90, 103, 0.5) 100%);
+  box-shadow: inset 1px 0 3px 0px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: 40px;
+  padding-top: 10vh;
+}
+.section-intro img {
+  width: 118px;
+  border-radius: 90px;
+  border: 3px solid rgb(244, 239, 233);
+}
+.section-intro p {
+  line-height: 45px;
+}
+
+.section-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.section-content .btnContainer {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+}
+.section-content .btnContainer button {
+  width: 125px;
+  height: 50px;
+  opacity: 0.8;
+  background-color: transparent;
+  border-color: transparent;
+  background-image: url(../assets/images/ButtonDefault.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  font-weight: 600;
+  text-align: center;
+  line-height: 50px;
+}
+.section-content .btnContainer button:hover {
+  opacity: 1;
+}
+.section-content .btnContainer button:active {
+  background-image: url(../assets/images/ButtonActive.png);
+}
+.section-content .btnContainer .active {
+  background-image: url(../assets/images/ButtonActive.png);
+}
+.section-content .contentContainer {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(244, 239, 233, 0.8) 0%, rgb(233, 217, 204) 100%);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10%;
+  padding: 5vw 10vw;
+  justify-content: flex-start;
 }
 
 /* 首頁主內容 */
@@ -12532,45 +12652,6 @@ section {
   overflow: hidden;
 }
 
-/* 簡略文章元件 */
-.simple-learnNoteComponent {
-  min-width: 200px;
-  width: 90%;
-  min-height: 195px;
-  height: auto;
-  color: rgb(12, 90, 103);
-  flex: 1 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  row-gap: 35px;
-  margin: 0 auto;
-  background-image: url("../assets/images/simple_learnNote.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 90%;
-}
-.simple-learnNoteComponent h3, .simple-learnNoteComponent .h3 {
-  max-width: 80%;
-  height: 60px;
-  line-height: 60px;
-  overflow: hidden;
-  text-emphasis: text;
-}
-.simple-learnNoteComponent .hugTag {
-  width: 300px;
-  height: 30px;
-  position: relative;
-}
-.simple-learnNoteComponent .tag-card {
-  /* 相對位置 */
-  position: absolute;
-  right: 38%;
-  bottom: 0;
-  color: rgb(11, 34, 40);
-}
-
 /* 首頁-聯繫我 */
 .index-contact {
   display: flex;
@@ -12618,96 +12699,6 @@ section {
 .index-contact .contact-bottom img {
   width: 50px;
   height: 50px;
-}
-
-/* 通用在作品集和學習紀錄 */
-.blogArea {
-  display: flex;
-  flex-direction: row;
-}
-
-.section-intro { /*  */
-  max-width: 285px;
-  width: 35%;
-  min-height: 77vh;
-  background: linear-gradient(-45deg, rgba(178, 206, 210, 0.5) 15%, rgba(126, 176, 183, 0.5) 35%, rgba(125, 173, 181, 0.5) 60%, rgba(128, 183, 190, 0.5) 80%, rgba(12, 90, 103, 0.5) 100%);
-  box-shadow: inset 1px 0 3px 0px rgba(0, 0, 0, 0.2);
-  position: sticky;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-  padding: 40px;
-  padding-top: 10vh;
-}
-.section-intro img {
-  width: 118px;
-  border-radius: 90px;
-  border: 3px solid rgb(244, 239, 233);
-}
-.section-intro p {
-  line-height: 45px;
-}
-
-.section-content {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-.section-content .btnContainer {
-  width: fit-content;
-  height: fit-content;
-  display: flex;
-  flex-direction: row;
-}
-.section-content .btnContainer button {
-  width: 180px;
-  height: 60px;
-  background-color: rgb(233, 217, 204);
-  opacity: 0.8;
-  border-color: rgba(244, 239, 233, 0.8);
-  border-radius: 10px;
-}
-.section-content .btnContainer button:hover {
-  opacity: 1;
-}
-.section-content .btnContainer button:active {
-  background-color: rgb(189, 170, 156);
-}
-.section-content .contentContainer {
-  width: 100%;
-  height: 100%;
-  background-image: linear-gradient(rgb(233, 217, 204) 0%, rgba(244, 239, 233, 0.8) 100%);
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 10%;
-  padding: 5vw 10vw;
-}
-.section-content .contentContainer .portfolio-file {
-  width: 45%;
-}
-
-.portfolio-file {
-  flex: 0 1 auto;
-  min-height: 165px;
-  height: 25vw;
-  background: url(../assets/images/portfolio-file.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100%;
-  display: flex;
-  flex-direction: column;
-  row-gap: 2vw;
-  justify-content: center;
-  align-items: center;
-}
-.portfolio-file h3, .portfolio-file .h3 {
-  line-height: 3rem;
-}
-.portfolio-file img {
-  width: 75%;
 }
 
 .aboutMe-Banner {
@@ -12790,13 +12781,8 @@ section {
   width: 100%;
   height: auto;
   padding-left: 20px;
-}
-.aboutMe-skills .aboutMe-title {
-  width: 130px;
-  padding-bottom: 20px;
-}
-.aboutMe-skills .aboutMe-title img {
-  width: 60%;
+  display: flex;
+  flex-direction: row;
 }
 .aboutMe-skills .skills-container {
   width: 80%;
@@ -12808,4 +12794,52 @@ section {
 }
 .aboutMe-skills .skills-container img {
   width: 80%;
+}
+
+/* 所有本頁標題 */
+.aboutMe-title {
+  width: 210px;
+  height: 50px;
+  padding-bottom: 20px;
+  position: relative;
+  padding-left: 20px;
+}
+.aboutMe-title h2, .aboutMe-title .h2 {
+  margin-left: 30%;
+}
+.aboutMe-title img {
+  position: absolute;
+  top: -40px;
+  z-index: -1;
+  width: 50%;
+}
+
+.portfolio-file {
+  flex: 0 1 auto;
+  min-width: 300px;
+  min-height: 165px;
+  height: 35%;
+  background: url(../assets/images/portfolio-file.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 3%;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+.portfolio-file h3, .portfolio-file .h3 {
+  line-height: 3rem;
+  padding-left: 10%;
+}
+.portfolio-file img {
+  width: 75%;
+}
+
+.contentContainer .simple-learnNoteComponent {
+  width: 300px;
+  flex: 0 1 auto;
+  row-gap: 10px;
 }/*# sourceMappingURL=style.css.map */

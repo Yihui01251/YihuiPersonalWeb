@@ -1,0 +1,26 @@
+.portfolio-file {
+    flex: 0 1 auto;
+    min-width: 300px;
+    min-height: 165px;
+    height: 35%;
+    background: url(../assets/images/portfolio-file.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 3%;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+
+    h3 {
+        line-height: 3rem;
+        padding-left: 10%;
+        //margin-bottom: 20px;
+    }
+    img {
+        width: 75%;
+    }
+}

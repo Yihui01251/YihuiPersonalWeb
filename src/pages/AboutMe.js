@@ -1,8 +1,9 @@
 // src/pages/AboutMe.js
-import React from 'react';
+import React from "react";
 import meImage from "../assets/images/me.png";
+import titleExperience from "../assets/images/aboutMe-title01.png";
 import experienceImage from "../assets/images/experience.svg";
-import titleImage from "../assets/images/aboutMe-title.png";
+import titleSkill from "../assets/images/aboutMe-title.png";
 import csharpLogo from "../assets/images/CSharp-Logo.png";
 import reactLogo from "../assets/images/React-Logo.png";
 import javascriptLogo from "../assets/images/JavaScript-Logo.png";
@@ -15,13 +16,15 @@ import figmaLogo from "../assets/images/Figma-Logo.png";
 const AboutMe = () => {
   return (
     <main>
-      <div className="aboutMe-Banner"> 
+      <div className="aboutMe-Banner">
         <div className="aboutMe-info">
           <div className="aboutMe-img">
             <img src={meImage} alt="" />
           </div>
           <div className="aboutMe-keyword">
-            <h1>詹怡慧 <span>ciuhyi@gmail.com</span></h1>
+            <h1>
+              詹怡慧 <span>ciuhyi@gmail.com</span>
+            </h1>
             <div className="tags-Container">
               <p className="tag">目標前端工程師</p>
               <p className="tag">組織規劃</p>
@@ -39,22 +42,45 @@ const AboutMe = () => {
       </div>
 
       <div className="aboutMe-content">
+
         <div className="aboutMe-experience">
+          <div className="aboutMe-title">
+            <h2>學經歷</h2>
+            <img src={titleExperience} alt="title裝飾" />
+          </div>
           <img src={experienceImage} alt="" />
         </div>
+
         <div className="aboutMe-skills">
           <div className="aboutMe-title">
-            <img src={titleImage} alt="title裝飾" />
+            <h2>技能</h2>
+            <img src={titleSkill} alt="title裝飾" />
           </div>
           <div className="skills-container">
-            <a href="#"><img src={csharpLogo} alt="CSharp按鈕" /></a>
-            <a href="#"><img src={reactLogo} alt="React按鈕" /></a>
-            <a href="#"><img src={javascriptLogo} alt="JavaScript按鈕" /></a>
-            <a href="#"><img src={css3Logo} alt="CSS3按鈕" /></a>
-            <a href="#"><img src={sassLogo} alt="sass按鈕" /></a>
-            <a href="#"><img src={html5Logo} alt="Html按鈕" /></a>
-            <a href="#"><img src={jqueryLogo} alt="JQuery按鈕" /></a>
-            <a href="#"><img src={figmaLogo} alt="Figma按鈕" /></a>
+            <a href="#">
+              <img src={csharpLogo} alt="CSharp按鈕" />
+            </a>
+            <a href="#">
+              <img src={reactLogo} alt="React按鈕" />
+            </a>
+            <a href="#">
+              <img src={javascriptLogo} alt="JavaScript按鈕" />
+            </a>
+            <a href="#">
+              <img src={css3Logo} alt="CSS3按鈕" />
+            </a>
+            <a href="#">
+              <img src={sassLogo} alt="sass按鈕" />
+            </a>
+            <a href="#">
+              <img src={html5Logo} alt="Html按鈕" />
+            </a>
+            <a href="#">
+              <img src={jqueryLogo} alt="JQuery按鈕" />
+            </a>
+            <a href="#">
+              <img src={figmaLogo} alt="Figma按鈕" />
+            </a>
           </div>
         </div>
         <div className="aboutMe-project"></div>

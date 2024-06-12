@@ -1,0 +1,420 @@
+/* 首頁主內容 */
+@keyframes scaleFloat {
+    0% {
+        scale: inherit;
+    }
+    50% {
+        scale: 120%;
+        transform: translate(2vw, 2vw);
+    }
+
+    100% {
+        scale: inherit;
+    }
+}
+@keyframes scaleFloatLeft {
+    0% {
+        scale: inherit;
+    }
+    50% {
+        scale: 180%;
+        transform: translate(-2vw, 3vh);
+    }
+
+    100% {
+        scale: inherit;
+    }
+}
+@keyframes scaleChange {
+    0% {
+        scale: inherit;
+    }
+    50% {
+        scale: 110%;
+    }
+    100% {
+        scale: inherit;
+    }
+}
+@keyframes scaleRotate {
+    0% {
+        scale: inherit;
+    }
+    50% {
+        transform: rotate3d(0, -10, 10, -1deg);
+        //z-index: 0;
+    }
+    100% {
+        scale: inherit;
+    }
+}
+@keyframes runCircle {
+    0% {
+        scale: inherit;
+    }
+    50% {
+        transform: translate(12vw, 12vw);
+    }
+    51% {
+        z-index: 0;
+    }
+    60% {
+        z-index: -1;
+    }
+    90% {
+        z-index: -1;
+    }
+    100% {
+        scale: inherit;
+    }
+}
+@keyframes runCircle1 {
+    0% {
+        scale: inherit;
+    }
+    50% {
+        transform: translate(15vw, 11vw);
+        z-index: 1;
+    }
+    70% {
+        z-index: 0;
+    }
+    90% {
+        z-index: -1;
+    }
+    100% {
+        scale: inherit;
+    }
+}
+/* banner */
+.index-banner {
+    height: 447px;
+    margin-bottom: 5vw;
+    margin-top: 50px;
+
+    /* 定位裝飾 */
+    position: relative;
+    /* 增加裝飾 */
+    //background-image: url("../../images/decorate-banner.png"), url("../../images/decorate-banner02.png");
+    //background-size:
+    // 72px 102px,
+    // 45px 45px;
+    //background-repeat: no-repeat, no-repeat;
+    // background-position:
+    //     left top,
+    //     30vw 8vh;
+    .decorate-banner {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: fit-content;
+        animation: scaleChange 5s 0s infinite;
+    }
+    .decorate-banner2 {
+        position: absolute;
+        left: 10%;
+        bottom: -5%;
+        width: fit-content;
+        animation: scaleFloatLeft 15s 0s infinite;
+    }
+    .decorate-banner3 {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        width: fit-content;
+        animation: scaleChange 5s 0s infinite;
+    }
+    .banner {
+        /* {`Yihui’s 個人網站`}方塊*/
+        width: 45%;
+        margin-top: 100px;
+        animation: scaleRotate 5s 0s infinite;
+    }
+
+    &::before {
+        /* 裝飾banner */
+        position: absolute;
+        content: "";
+        // url("../../images/decorate-banner03.png")
+        width: 50px;
+        height: 50px;
+        background-color: $background-color-beach-white-s;
+        border-radius: 10px;
+        box-shadow: inset -5px -5px 4px 0px rgba(8, 63, 72, 0.3);
+
+        right: 35%;
+        top: 0;
+        z-index: 1;
+
+        animation: runCircle1 10s 0s infinite;
+    }
+
+    &::after {
+        /* 裝飾banner */
+        position: absolute;
+        content: "";
+        width: 50px;
+        height: 50px;
+        background-color: $background-color-beach-white-s;
+        border-radius: 10px;
+        box-shadow: inset -5px -5px 4px 0px rgba(8, 63, 72, 0.3);
+
+        left: 20%;
+        top: 55%;
+
+        animation: runCircle 10s 5s infinite;
+    }
+}
+
+/* 首頁aboutMe容器 */
+@keyframes CloudFloat {
+    0% {
+        transform: translate(0vw);
+    }
+
+    100% {
+        transform: translate(11vw);
+    }
+}
+.index-aboutMe {
+    height: auto;
+    margin-bottom: 10vh;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+
+    .aboutMe-content {
+        /* 裝打招呼+個人照片的容器 */
+        width: 90vw;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        gap: 20vw;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+
+        /* 定位裝飾雲 */
+        position: relative;
+
+        // &::before {
+        //     /* 打招呼裝飾雲 */
+        //     position: absolute;
+        //     content: url("../../images/decorate-aboutMe02.png");
+
+        //     display: block;
+        //     width: auto;
+        //     height: auto;
+        //     left: 12vw;
+        //     bottom: -25vh;
+        //     z-index: -1;
+
+        //     animation: CloudFloat 120s 0s 1;
+        // }
+        &::after {
+            position: absolute;
+            content: url("../assets/images/decorate-aboutMe03.png");
+            background-size: 10vw;
+            display: block;
+            width: 300px;
+            height: 80px;
+            right: 0;
+            bottom: 15vh;
+            z-index: -3;
+        }
+        .content-intro {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(200px, 350px));
+            row-gap: 20px;
+            justify-items: center;
+            align-items: stretch;
+            &::after {
+                /* 打招呼裝飾雲 */
+                position: absolute;
+                content: url("../assets/images/decorate-aboutMe02.png");
+                display: block;
+                scale: 100%;
+                width: auto;
+                height: auto;
+                //left: -20%;
+                top: -110px;
+                //top: -40%;
+                z-index: -1;
+                @media (max-width: 1440px) {
+                    left: -30%;
+                }
+            }
+
+            h3 {
+                grid-column: 1;
+                grid-row: 1;
+                justify-self: center;
+            }
+            p {
+                /* 打招呼 */
+                width: 72%;
+                height: 20%;
+                /* display: block; */
+                position: relative;
+                text-align: center;
+                line-height: 50px;
+
+                grid-column: 1/3;
+                grid-row: 2;
+            }
+            a {
+                grid-column: 2;
+                grid-row: 3;
+                //justify-self: flex-end;
+            }
+            animation: CloudFloat 150s 0s 1;
+        }
+
+        img {
+            /* 個人照片 */
+            width: 30%;
+            z-index: -2;
+        }
+    }
+}
+/* 首頁-portfolio容器:標題+div */
+.index-portfolio {
+    height: auto;
+    gap: 50px;
+    margin-bottom: 10vh;
+}
+/* 裝介紹作品集的容器(img+div) */
+.index-portfolioInfo {
+    width: 100%;
+    height: auto;
+    background-image: url("../assets/images/index-portfolio.png");
+    background-size: 70% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5vw;
+    padding: 15px 0px;
+
+    /* 書 */
+    img {
+        flex: 0 1 auto;
+        width: 15%;
+    }
+}
+
+/* 作品集簡介語 */
+.index-portfolioInfo-content {
+    flex: 0 1 auto;
+    width: 30%;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    align-items: flex-end;
+    color: $font-color-white;
+    margin: 10px 0px;
+}
+/* (你能看到...)容器 */
+.index-portfolioInfo-content-infoTitle {
+    width: auto;
+    height: auto;
+    align-self: flex-start;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+
+    p {
+        /* 加粗 */
+        font-weight: 600;
+    }
+}
+
+/* 首頁-learningNote容器:標題+div+a */
+.index-note {
+    height: auto;
+    gap: 50px;
+    margin-bottom: 10px;
+    margin-top: 5vh;
+}
+/*  */
+.index-noteContainer {
+    width: 75%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    overflow: hidden;
+}
+
+
+/* 首頁-聯繫我 */
+.index-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    &::before {
+        content: url("../assets/images/1920wave.png");
+        position: absolute;
+        width: 100%;
+        height: auto;
+        top: -100px;
+        left: 0;
+        z-index: -1;
+    }
+
+    // .bg-wave{
+    //     position: absolute;
+    //     width: 100vw;
+    //     height: auto;
+    //     top: -100px;
+    //     z-index: -1;
+    // }
+    .contact-top {
+        width: 30%;
+        height: 250px;
+        line-height: 290px;
+        h2 {
+            width: fit-content;
+            margin: 0 auto;
+        }
+    }
+    .contact-bottom {
+        width: 100%;
+        height: 150px;
+        //background-color: $color-beach;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+        position: relative;
+        &::before {
+            content: url("../assets/images/beach.png");
+            position: absolute;
+            width: auto;
+            height: 200px;
+            top: -30px;
+            z-index: -2;
+        }
+        img {
+            width: 50px;
+            height: 50px;
+        }
+    }
+}
