@@ -30,8 +30,8 @@ const Home = () => {
         </div>
 
         <p className="hero-desc">
-          重視 SOLID 與 Clean Code 的前端工程師，負責過多角色權限平台與 Nuxt 3 SSR 影音平台；
-          並把 AI 導入團隊流程：將規範做成 AI Skill、自動化 Code Review 與技術文件。
+          凌群電腦前端工程師。Channel+ 教育廣播電台前台（Nuxt 3 SSR）主要開發者、主導體大運動資料庫重構；
+          用契約、分層與測試約束 AI 產出，並把這套做法做成團隊的 Claude Code Plugin 與 CI AI 審查。
         </p>
         <div className="hero-cta">
           <Link to="/portfolio" className="btn-primary">查看作品集</Link>
@@ -45,12 +45,12 @@ const Home = () => {
           <div className="fact fact--wide">
             <p className="fact-label">前端工作經驗</p>
             <p className="fact-value">{experience}</p>
-            <p className="fact-note">{workStartLabel} 起至今</p>
+            <p className="fact-note">{workStartLabel} 起｜凌群電腦</p>
           </div>
           <div className="fact">
             <p className="fact-label">主力技術</p>
             <p className="fact-value fact-value--sm">Vue3 / Nuxt3</p>
-            <p className="fact-note">TypeScript · Pinia · Vitest</p>
+            <p className="fact-note">TypeScript · Pinia · Vitest · Gherkin</p>
           </div>
           <div className="fact">
             <p className="fact-label">應徵方向</p>
@@ -59,8 +59,8 @@ const Home = () => {
           </div>
           <div className="fact fact--accent">
             <p className="fact-label">AI 工作流</p>
-            <p className="fact-value fact-value--sm">團隊實際採用</p>
-            <p className="fact-note">PM 與同事在用的文件、進度與規範流程</p>
+            <p className="fact-value fact-value--sm">團隊 AI 工具鏈</p>
+            <p className="fact-note">Claude Code Plugin · CI AI 審查 · Notion 同步</p>
           </div>
         </div>
       </section>
@@ -72,8 +72,8 @@ const Home = () => {
           <div className="home-about-text">
             <h3>您好！我是詹怡慧</h3>
             <p>
-              從大學的 C# 遊戲開發走到前端，現在以 Vue3 / Nuxt3 開發產品。
-              喜歡在寫 code 前先想清楚架構，也喜歡把重複的工作交給 AI 與自動化。
+              從職訓手刻基本功、入職當週自學 Vue，到能定義架構、建立團隊 AI 工具鏈並參與標案評估。
+              一路的主線是：實作 → 提煉 → 分享 → 制度化。
             </p>
             <Link to="/aboutMe" className="btn-outline">了解我</Link>
           </div>

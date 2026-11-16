@@ -5,6 +5,15 @@ import titleDecoCircle from "../assets/images/aboutMe-title.png";
 import { skillGroups, aiPractices } from "../data/skills";
 import { formatExperience, workStartLabel } from "../data/experience";
 import { strengths } from "../data/strengths";
+import {
+  company,
+  jobTitle,
+  certifications,
+  growthStages,
+  sharingTimeline,
+  talkOutline,
+  aiTimeline,
+} from "../data/career";
 
 // 依時間順序（舊 → 新），桌面版橫向時間軸、手機版直向
 const timeline = [
@@ -15,18 +24,23 @@ const timeline = [
     tech: ["C#", "Unity", "Figma"],
   },
   {
-    date: "2024.03 — 2024.06",
-    title: "職訓局 互動式網頁設計課程 結訓",
-    desc: "HTML / CSS / JavaScript 到 React、Sass，確立轉職前端。",
-    tech: ["JavaScript", "React", "Sass"],
+    date: "2024.04 — 2024.06",
+    title: "職訓 互動式網頁設計課程",
+    desc: "HTML / CSS / SCSS、JavaScript / jQuery 到 React；小組專題「現在想打球」主要貢獻者。",
+    tech: ["SCSS", "JavaScript", "React"],
   },
   {
     date: `${workStartLabel} — 現在（${formatExperience()}）`,
-    title: "前端工程師",
-    desc: "獨立開發前台並同時維護 1–2 個專案；推動 Service 層重構、測試與 CI，建立團隊 AI 協作規範。帶實習生、參與面試，主導前端進度 sync。",
+    title: `${company}　${jobTitle}`,
+    desc: "Channel+ 前台主要開發者、主導體大運動資料庫重構、金融教育平台唯一前端；建立團隊前端規範與 AI 工具鏈，並負責標案人天評估。",
     tech: ["Vue3", "Nuxt3", "TypeScript", "Vitest"],
     current: true,
   },
+];
+
+const otherExperience = [
+  "產品規格文件（2026）：AI 智慧客服 MVP 的 UF 系列 Story 總覽與相依矩陣，過程中找出來源產品定義文件漏列的 Story",
+  "Unity 虛擬助理（短期支援 1–2 週）：UI 實作、把分散的 UI 綁定集中成單一管理模組、串接天氣 API、調整場景燈光",
 ];
 
 const SectionTitle = ({ deco, children }) => (
@@ -46,11 +60,14 @@ const AboutMe = () => {
             <h1>
               詹怡慧 <span>Frontend Engineer</span>
             </h1>
+            <p className="aboutMe-company">
+              {company}｜{jobTitle}
+            </p>
             <div className="tags-Container">
               <span className="tag">Vue3 / Nuxt3</span>
-              <span className="tag">架構設計 · SOLID</span>
-              <span className="tag">AI 協作工作流</span>
-              <span className="tag">帶人 · 技術交流</span>
+              <span className="tag">架構與重構</span>
+              <span className="tag">團隊 AI 工具鏈</span>
+              <span className="tag">技術分享</span>
               <span className="tag tag--outline">往全端發展</span>
             </div>
             <a href="mailto:ciuhyi@gmail.com" className="aboutMe-email">ciuhyi@gmail.com</a>
@@ -59,20 +76,18 @@ const AboutMe = () => {
 
         <div className="aboutMe-intro">
           <p>
-            從大學的 C# 遊戲開發，到職訓局的網頁課程，確定了投入前端的方向。
-            目前以 <strong>Vue3 / Nuxt3</strong> 開發多個產品，包含多角色權限平台與 SSR 影音平台。
+            職訓時從手刻樣式與動畫打基本功，入職當週自學 Vue 就接手既有的金融教育平台。
+            之後從第一筆提交開始負責 <strong>Channel+ 教育廣播電台前台（Nuxt 3 SSR）</strong>，
+            並主導<strong>體大運動資料庫</strong>的重構。
           </p>
           <p>
-            我習慣寫 code 前先想架構：統一 API 錯誤處理的 Service 層、隔離後端資料的 DTO / Domain、
-            可測試的 composables，<strong>SOLID</strong> 與 <strong>Clean Code</strong> 是我評估設計的基準。
+            我從接手既有系統的前端工程師，成長為能<strong>定義架構</strong>、
+            <strong>建立團隊 AI 開發工具鏈</strong>、並參與<strong>標案評估</strong>的前端負責人。
+            一路的主線是：<strong>實作 → 提煉 → 分享 → 制度化</strong>。
           </p>
           <p>
-            到職 1 週就接手開發中的專案並提前完成；能預估工時，至今<strong>沒有延誤過時程</strong>。
-            除了開發，我也帶實習生與新進同事、參與前端面試，並主導團隊的進度 sync 與技術交流。
-          </p>
-          <p>
-            我把 <strong>AI 導入團隊流程</strong>：交接文件模板、Git commit 彙整進度報告等做法，
-            已經是同事與 PM 實際在用的工具。接下來以 Nuxt Server Routes 與 Node.js 為起點，
+            我不是單純使用 AI，而是用介面契約、分層架構、測試與 CI 門禁約束 AI 的產出，
+            再把這套做法變成團隊可以安裝的工具。接下來以 Nuxt Server Routes 與 Node.js 為起點，
             持續往<strong>全端工程師</strong>發展。
           </p>
         </div>
@@ -95,7 +110,27 @@ const AboutMe = () => {
         </section>
 
         <section className="aboutMe-section">
-          <SectionTitle deco={titleDecoCircle}>工作亮點</SectionTitle>
+          <SectionTitle deco={titleDecoCircle}>成長脈絡</SectionTitle>
+          <p className="aboutMe-lead">貫穿主線：實作 → 提煉 → 分享 → 制度化</p>
+          <ol className="stage-grid">
+            {growthStages.map((s) => (
+              <li key={s.stage} className="stage-card">
+                <p className="stage-meta">
+                  {s.stage}｜{s.period}
+                </p>
+                <h3>{s.title}</h3>
+                <ul>
+                  {s.points.map((p) => (
+                    <li key={p}>{p}</li>
+                  ))}
+                </ul>
+              </li>
+            ))}
+          </ol>
+        </section>
+
+        <section className="aboutMe-section">
+          <SectionTitle deco={titleDecoSquare}>工作亮點</SectionTitle>
           <div className="strength-grid">
             {strengths.map((s, i) => (
               <article key={s.title} className="strength-card">
@@ -110,6 +145,32 @@ const AboutMe = () => {
                 </ul>
               </article>
             ))}
+          </div>
+        </section>
+
+        <section className="aboutMe-section">
+          <SectionTitle deco={titleDecoCircle}>技術分享與影響力</SectionTitle>
+          <div className="share-layout">
+            <ol className="share-timeline">
+              {sharingTimeline.map((s) => (
+                <li key={s.date + s.text}>
+                  <span className="share-date">{s.date}</span>
+                  <p>{s.text}</p>
+                </li>
+              ))}
+            </ol>
+            <div className="strength-card share-talk">
+              <h3>「AI 協作時代的前端戰略」分享重點</h3>
+              <ul>
+                {talkOutline.map((t) => (
+                  <li key={t}>{t}</li>
+                ))}
+              </ul>
+              <p className="share-note">
+                我的角色是啟發與促成：讓同事建立概念、願意主動去做，而不是手把手教學。
+                程式碼異味框架引用自 JSDC 2025 講座。
+              </p>
+            </div>
           </div>
         </section>
 
@@ -131,6 +192,17 @@ const AboutMe = () => {
 
         <section className="aboutMe-section">
           <SectionTitle deco={titleDecoCircle}>我如何運用 AI</SectionTitle>
+          <ol className="ai-timeline">
+            {aiTimeline.map((a) => (
+              <li key={a.period}>
+                <span className="share-date">{a.period}</span>
+                <p>
+                  <strong>{a.tools}</strong>
+                  <span>{a.note}</span>
+                </p>
+              </li>
+            ))}
+          </ol>
           <div className="note-grid">
             {aiPractices.map((a) => (
               <article key={a.title} className="note-card">
@@ -139,6 +211,31 @@ const AboutMe = () => {
                 <span className="note-pill">{a.tag}</span>
               </article>
             ))}
+          </div>
+        </section>
+
+        <section className="aboutMe-section">
+          <SectionTitle deco={titleDecoSquare}>證照與其他經歷</SectionTitle>
+          <div className="strength-grid">
+            <article className="strength-card">
+              <h3>證照</h3>
+              <ul>
+                {certifications.map((c) => (
+                  <li key={c.name}>
+                    {c.name}
+                    <span className="cert-issuer">　{c.issuer}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+            <article className="strength-card">
+              <h3>其他經歷</h3>
+              <ul>
+                {otherExperience.map((o) => (
+                  <li key={o}>{o}</li>
+                ))}
+              </ul>
+            </article>
           </div>
         </section>
       </div>

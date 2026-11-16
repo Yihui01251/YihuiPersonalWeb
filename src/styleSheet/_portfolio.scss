@@ -436,3 +436,23 @@
     font-size: 0.8rem;
     font-weight: 700;
 }
+
+/* ---------- 作品期間與角色 ---------- */
+.project-card-period {
+    margin-top: -4px;
+    font-size: 0.8rem;
+    color: $color-peach;
+}
+.home .project-card-period {
+    color: $color-wave;
+}
+.project-modal-role {
+    margin-top: -6px;
+    font-size: 0.95rem;
+    line-height: 1.7;
+
+    strong {
+        font-weight: 700;
+        color: $color-wave;
+    }
+}

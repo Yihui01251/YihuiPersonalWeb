@@ -261,3 +261,144 @@
         top: 12px;
     }
 }
+
+/* ---------- 公司與副標 ---------- */
+.aboutMe-company {
+    font-weight: 700;
+    color: $color-wave;
+}
+.aboutMe-lead {
+    margin: -14px 0 24px;
+    font-weight: 700;
+    color: $color-wave;
+}
+
+/* ---------- 成長脈絡：四階段 ---------- */
+.stage-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    counter-reset: stage;
+
+    @media (max-width: 1100px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 640px) {
+        grid-template-columns: 1fr;
+    }
+}
+.stage-card {
+    position: relative;
+    padding: 24px 24px 26px;
+    border-radius: 26px;
+    background-color: $color-wave;
+    box-shadow: 0 8px 20px rgba(8, 63, 72, 0.15);
+
+    h3,
+    p,
+    li {
+        color: $font-color-white;
+    }
+    h3 {
+        font-size: 1.2rem;
+        margin: 6px 0 12px;
+    }
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding-left: 18px;
+    }
+    li {
+        list-style: disc;
+        font-size: 0.88rem;
+        line-height: 1.75;
+    }
+}
+.stage-meta {
+    display: inline-block;
+    padding: 2px 12px;
+    border-radius: $border-radius-tag;
+    background-color: $color-peach;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: $font-color-deepBlue !important;
+}
+
+/* ---------- 技術分享與影響力 ---------- */
+.share-layout {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 28px;
+    align-items: start;
+
+    @media (max-width: 900px) {
+        grid-template-columns: 1fr;
+    }
+}
+.share-timeline,
+.ai-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding-left: 22px;
+    border-left: 3px solid #7ed3e6;
+
+    li {
+        position: relative;
+        list-style: none;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: -31px;
+            top: 6px;
+            width: 13px;
+            height: 13px;
+            background-color: #7ed3e6;
+            transform: rotate(45deg);
+        }
+    }
+    p {
+        line-height: 1.8;
+        font-size: 0.92rem;
+    }
+}
+.share-date {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: $color-wave;
+}
+.share-talk h3 {
+    font-size: 1.1rem;
+}
+.share-note {
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px dashed rgba($color-wave, 0.35);
+    font-size: 0.85rem;
+    line-height: 1.8;
+}
+
+/* ---------- AI 工具演進 ---------- */
+.ai-timeline {
+    margin-bottom: 28px;
+
+    p {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px 14px;
+    }
+    strong {
+        font-weight: 700;
+    }
+    span {
+        opacity: 0.75;
+    }
+}
+
+.cert-issuer {
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
