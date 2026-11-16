@@ -6,6 +6,7 @@ import ProjectGallery from "../component/ProjectGallery";
 import { featuredProjects, projects } from "../data/projects";
 import { skillGroups, aiPractices } from "../data/skills";
 import { formatExperience, workStartLabel } from "../data/experience";
+import { strengths } from "../data/strengths";
 
 const Home = () => {
   const experience = formatExperience();
@@ -58,8 +59,8 @@ const Home = () => {
           </div>
           <div className="fact fact--accent">
             <p className="fact-label">AI 工作流</p>
-            <p className="fact-value fact-value--sm">100+ 份協作紀錄</p>
-            <p className="fact-note">Claude Code Skill / Plugin</p>
+            <p className="fact-value fact-value--sm">團隊實際採用</p>
+            <p className="fact-note">PM 與同事在用的文件、進度與規範流程</p>
           </div>
         </div>
       </section>
@@ -78,6 +79,22 @@ const Home = () => {
           </div>
           <img className="home-about-photo" src={meImage} alt="詹怡慧的照片" />
         </div>
+      </section>
+
+      {/* 核心特質 */}
+      <section className="home-strengths">
+        <h2 className="quote-title">核心特質</h2>
+        <ol className="highlight-list">
+          {strengths.map((s, i) => (
+            <li key={s.title} className="highlight-item">
+              <span className="highlight-num" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
+              <div className="highlight-content">
+                <h3>{s.title}</h3>
+                <p>{s.summary}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
       </section>
 
       {/* 精選專案 */}
@@ -100,7 +117,7 @@ const Home = () => {
       {/* AI 應用：Figma 學習紀錄卡樣式（深青卡 + 蜜桃標籤） */}
       <section className="home-ai">
         <h2 className="quote-title">AI 應用在工作上</h2>
-        <p className="section-lead">不只是用 AI 寫 code，而是把它變成團隊可以重複使用的流程</p>
+        <p className="section-lead">不只是用 AI 寫 code，而是把它變成同事與 PM 都在用的流程</p>
         <div className="note-grid">
           {aiPractices.map((a) => (
             <article key={a.title} className="note-card">
