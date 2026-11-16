@@ -1,124 +1,214 @@
-.aboutMe-Banner{
+/* ============================
+   關於我（延續原設計：淺藍橫幅、米白介紹卡、幾何標題裝飾、青色時間軸）
+   ============================ */
+.aboutMe-Banner {
     width: 100%;
-    height: fit-content;
-    background: url(../assets/images/aboutMe_bannerBg.png);
-    background-repeat: no-repeat;
-    background-position: center 0;
-
+    background: url("../assets/images/aboutMe_bannerBg.png") center 0 / 1920px auto no-repeat;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     row-gap: 50px;
-    padding-top: 75px;
+    padding: 75px 6vw 0;
 
-    .aboutMe-info{
-        width: auto;
-        height: auto;
+    .aboutMe-info {
         display: flex;
-        flex-direction: row;
-        column-gap: 60px;
-        justify-content: center;
         align-items: center;
+        column-gap: 50px;
 
-        .aboutMe-img{
-             width: 20%;
-             position: relative;
-             &::before{
-                content: '衣櫃';
-                width:65px;
-                height: 65px;
-                text-align: center;
-                color: $second-color-white;
-                line-height: 65px;
-                font-weight: 600;
-                border-radius: 90px;
-                background-color: $color-wave;
-                position: absolute;
-                right: -30px;
-                bottom: 0;
-                
-             }
-        }
-
-        .aboutMe-keyword{
-            width: fit-content;
-            height: fit-content;
-            display: flex;
+        @media (max-width: 768px) {
             flex-direction: column;
-            align-items: center;
-            row-gap: 20px;
+            row-gap: 24px;
+            text-align: center;
+        }
+    }
+    .aboutMe-img {
+        width: 170px;
+        height: 170px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    .aboutMe-keyword {
+        display: flex;
+        flex-direction: column;
+        row-gap: 18px;
 
-            h1{
-                font-size: 2rem;
-                width: fit-content;
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-                column-gap: 10px;
+        @media (max-width: 768px) {
+            align-items: center;
+        }
+        h1 {
+            font-size: 2.2rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            column-gap: 14px;
+
+            span {
+                font-size: 1.2rem;
+                color: $color-wave;
             }
         }
     }
+    .aboutMe-email {
+        font-size: 1rem;
+    }
 
-    .aboutMe-intro{
-        width: 600px;
-        padding: 50px;
+    .aboutMe-intro {
+        max-width: 640px;
+        padding: 40px 50px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
         background-color: $background-color-beach-white;
         border-radius: 30px;
-        box-shadow: -2px -4px 5px 0px  $box-shadow;
-        color: $font-color-deepBlue;
-        line-height: 30px;
+        box-shadow: -2px -4px 5px 0 $box-shadow;
+
+        p {
+            line-height: 2;
+        }
+        strong {
+            font-weight: 700;
+            color: $color-wave;
+        }
+        @media (max-width: 640px) {
+            padding: 26px 22px;
+        }
     }
 }
 
-.aboutMe-content{
+.aboutMe-content {
     display: flex;
     flex-direction: column;
-    row-gap: 50px;
+    row-gap: 40px;
+    padding: 50px 0 80px;
 }
-.aboutMe-experience{
-    img{
-        width: 99%;
-    }
-}
-
-.aboutMe-skills{
+.aboutMe-section {
     width: 100%;
-    height: auto;
-    padding-left: 20px;
-    display: flex;
-    flex-direction: row;
-    
-    .skills-container{
-        width: 80%;
-        display: flex;
-        flex-direction: row;
+    padding: 0 6vw;
+    align-items: stretch;
+}
 
-        a{
-            &:hover{
-                scale: 110%;
-            }
-        }
-        img{
-            width: 80%;
-        }
+/* 標題 + 幾何裝飾（原設計） */
+.aboutMe-title {
+    position: relative;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    padding-left: 40px;
+    margin-bottom: 30px;
+
+    img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 80px;
+        z-index: -1;
+    }
+    h2 {
+        font-size: 2rem;
     }
 }
-/* 所有本頁標題 */
-.aboutMe-title{
-    width: 210px;
-    height: 50px;
-    padding-bottom: 20px;
+
+/* ---------- 時間軸 ---------- */
+.timeline {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 30px;
     position: relative;
-    padding-left: 20px;
-    h2{
-        margin-left: 30%;
-    }
-    img{
+
+    /* 橫向時間線 + 箭頭 */
+    &::before {
+        content: "";
         position: absolute;
-        top: -40px;
-        
-        z-index: -1;
-        width: 50%;
+        left: -6vw;
+        right: 0;
+        top: 96px;
+        height: 3px;
+        background-color: #7ed3e6;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        right: -6px;
+        top: 89px;
+        border: 8px solid transparent;
+        border-left: 14px solid #7ed3e6;
+    }
+}
+.timeline-item {
+    display: grid;
+    grid-template-rows: 64px 64px auto auto auto;
+    justify-items: center;
+    text-align: center;
+    row-gap: 6px;
+}
+.timeline-label {
+    align-self: end;
+    padding: 10px 22px;
+    border-radius: 6px;
+    background-color: $color-wave;
+    color: $font-color-white;
+    font-weight: 700;
+    line-height: 1.5;
+}
+.timeline-dot {
+    align-self: center;
+    width: 16px;
+    height: 16px;
+    background-color: #7ed3e6;
+    transform: rotate(45deg);
+    position: relative;
+    z-index: 1;
+
+    .timeline-item--current & {
+        background-color: $color-wave;
+        box-shadow: 0 0 0 5px rgba($color-ocean, 0.35);
+    }
+}
+.timeline-date {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+.timeline-desc {
+    max-width: 300px;
+    line-height: 1.8;
+    font-size: 0.9rem;
+}
+.timeline-tech {
+    font-size: 0.8rem;
+    color: $color-wave;
+}
+
+/* 手機：改為直向時間軸 */
+@media (max-width: 768px) {
+    .timeline {
+        grid-template-columns: 1fr;
+        row-gap: 34px;
+        padding-left: 30px;
+
+        &::before {
+            left: 7px;
+            right: auto;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            height: auto;
+        }
+        &::after {
+            display: none;
+        }
+    }
+    .timeline-item {
+        grid-template-rows: none;
+        justify-items: start;
+        text-align: left;
+        position: relative;
+    }
+    .timeline-label {
+        align-self: auto;
+    }
+    .timeline-dot {
+        position: absolute;
+        left: -30px;
+        top: 12px;
     }
 }

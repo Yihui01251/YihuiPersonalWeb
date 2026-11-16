@@ -1,147 +1,123 @@
-/* src/pages/Home.js */
 import React from "react";
-//路由器
 import { Link } from "react-router-dom";
-//輪播套件
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-/* 圖片 */
-import banner from "../assets/images/banner.svg";
-import decorateBanner from "../assets/images/decorate-banner.png";
-import decorateBanner04 from "../assets/images/decorate-banner04.png";
-
 import meImage from "../assets/images/me.png";
-import facebookImage from "../assets/images/Facebook.png";
 import portfolioBookImage from "../assets/images/index-portfolio-book.png";
+import ProjectCard from "../component/ProjectCard";
+import { featuredProjects, projects } from "../data/projects";
+import { skillGroups, aiPractices } from "../data/skills";
 
 const Home = () => {
   return (
-    <main>
-      <section className="index-banner">
-        <div>
-          <img className="decorate-banner" src={decorateBanner} alt="" />
-        </div>
-        <div>
-          <img className="decorate-banner3" src={decorateBanner04} alt="" />
-        </div>
-        <img className="banner" src={banner} alt="" />
-      </section>
-      <section className="index-aboutMe">
-        <h2>"關於我"</h2>
-        <div className="aboutMe-content">
-          <div className="content-intro">
-            <h3>您好!我是詹怡慧</h3>
-            <p>
-              從大學開始做遊戲程式設計，到畢業後嘗試做前端。
-              是個在前進的過程尋找適合自己的路， 並在當下追求進步的人。
-            </p>
-            <Link to="/aboutMe" className="button">
-              了解我
-            </Link>
-          </div>
-          <img src={meImage} alt="怡慧的生活照" />
-        </div>
-      </section>
-      <section className="index-portfolio">
-        <h2>"作品集"</h2>
-        <div className="index-portfolioInfo">
-          <img src={portfolioBookImage} alt="書" />
-          <div className="index-portfolioInfo-content">
-            <div className="index-portfolioInfo-content-infoTitle">
-              <p>你能</p>
-              <p style={{ fontSize: "1.75rem" }}>看</p>
-              <p>到...</p>
-            </div>
-            <p style={{ alignSelf: "center" }}>
-              scss切版、react、javaScript、C#遊戲、設計
-            </p>
-            <Link to="/portfolio" className="button">
-              觀看作品集
-            </Link>
-          </div>
-        </div>
-      </section>
-      <section className="index-note">
-        <h2>"學習紀錄"</h2>
+    <main className="home">
+      {/* Hero：保留原設計的傾斜程式碼看板，放入姓名與職稱讓 HR 第一眼看到 */}
+      <section className="hero">
+        <span className="hero-block hero-block--1"></span>
+        <span className="hero-block hero-block--2"></span>
+        <span className="hero-block hero-block--3"></span>
+        <span className="hero-block hero-block--4"></span>
 
-        <div className="index-noteContainer">
-          <Swiper
-            spaceBetween={50}
-            slidesPerView={3}
-            onSlideChange={() => console.log("slide change")}
-            onSwiper={(swiper) => console.log(swiper)}
-          >
-            <SwiperSlide>
-              <a
-                href="#"
-                className="simple-learnNoteComponent"
-                id="swiper1"
-              >
-                <h3>文章標題</h3>
-                <div className="hugTag">
-                  <p className="tag-card">程式</p>
-                </div>
-              </a>
-            </SwiperSlide>
-            <SwiperSlide>
-              <a
-                href="#"
-                className="simple-learnNoteComponent"
-                id="swiper2"
-              >
-                <h3>嘗試Figma多重選單</h3>
-                <div className="hugTag">
-                  <p className="tag-card">設計</p>
-                </div>
-              </a>
-            </SwiperSlide>
-            <SwiperSlide>
-              <a
-                href="#"
-                className="simple-learnNoteComponent"
-                id="swiper3"
-              >
-                <h3>js更新子選項</h3>
-                <div className="hugTag">
-                  <p className="tag-card">程式</p>
-                </div>
-              </a>
-            </SwiperSlide>
-            <SwiperSlide>
-              <a
-                href="#"
-                className="simple-learnNoteComponent"
-                id="swiper4"
-              >
-                <h3>react多重篩選</h3>
-                <div className="hugTag">
-                  <p className="tag-card">程式</p>
-                </div>
-              </a>
-            </SwiperSlide>
-            <SwiperSlide>
-              <a href="#" className="simple-learnNoteComponent">
-                <h3>文章標題</h3>
-                <div className="hugTag">
-                  <p className="tag-card">tag</p>
-                </div>
-              </a>
-            </SwiperSlide>
-          </Swiper>
+        <div className="hero-board">
+          <p className="hero-board-code">{"{`"}</p>
+          <div className="hero-board-text">
+            <h1>詹怡慧</h1>
+            <p>Frontend Engineer · Full-stack Ready</p>
+          </div>
+          <p className="hero-board-code">{"`}"}</p>
         </div>
-        <Link to="/learningNote" className="button">
-          更多
-        </Link>
+
+        <p className="hero-stack">Vue3 / Nuxt3 · TypeScript · 架構設計 · AI 協作工作流</p>
+        <p className="hero-desc">
+          重視 SOLID 與 Clean Code 的前端工程師，負責過多角色權限平台與 Nuxt 3 SSR 影音平台；
+          並把 AI 導入團隊流程：將規範做成 AI Skill、自動化 Code Review 與技術文件。
+        </p>
+        <div className="hero-cta">
+          <Link to="/portfolio" className="btn-primary">查看作品集</Link>
+          <a href="mailto:ciuhyi@gmail.com" className="btn-outline">聯繫我</a>
+        </div>
       </section>
+
+      {/* 關於我 */}
+      <section className="home-about">
+        <h2 className="quote-title">關於我</h2>
+        <div className="home-about-content">
+          <div className="home-about-text">
+            <h3>您好！我是詹怡慧</h3>
+            <p>
+              從大學的 C# 遊戲開發走到前端，現在以 Vue3 / Nuxt3 開發產品。
+              喜歡在寫 code 前先想清楚架構，也喜歡把重複的工作交給 AI 與自動化。
+            </p>
+            <Link to="/aboutMe" className="btn-outline">了解我</Link>
+          </div>
+          <img className="home-about-photo" src={meImage} alt="詹怡慧的照片" />
+        </div>
+      </section>
+
+      {/* 精選專案 */}
+      <section className="home-projects">
+        <h2 className="quote-title">精選專案</h2>
+        <div className="project-grid home-projects-grid">
+          {featuredProjects.map((p) => (
+            <ProjectCard key={p.id} project={p} compact />
+          ))}
+        </div>
+
+        <div className="portfolio-teaser">
+          <img src={portfolioBookImage} alt="" aria-hidden="true" />
+          <div className="portfolio-teaser-content">
+            <p className="portfolio-teaser-title">
+              你能<span>看</span>到...
+            </p>
+            <p>Nuxt3 SSR、權限系統、全端 Server Routes、AI 工具鏈，共 {projects.length} 件作品</p>
+            <Link to="/portfolio" className="btn-outline">觀看作品集</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* AI 應用 */}
+      <section className="home-ai">
+        <h2 className="quote-title">AI 應用在工作上</h2>
+        <p className="section-lead">不只是用 AI 寫 code，而是把它變成團隊可以重複使用的流程</p>
+        <div className="note-grid">
+          {aiPractices.map((a) => (
+            <article key={a.title} className="note-card">
+              <h3 className="note-title">{a.title}</h3>
+              <p className="note-desc">{a.desc}</p>
+              <span className="note-pill">{a.tag}</span>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* 技術棧 */}
+      <section className="home-skills">
+        <h2 className="quote-title">技術棧</h2>
+        <div className="skill-panel">
+          {skillGroups.map((g) => (
+            <div key={g.key} className="skill-row">
+              <p className="skill-row-label">{g.label}</p>
+              <div className="tags-Container">
+                {g.items.map((t) => (
+                  <span key={t} className={`tag tag--${g.key}`}>{t}</span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 聯繫我：原設計的海浪 + 沙灘 */}
       <section className="index-contact">
         <div className="contact-top">
-          <h2>{"聯繫我"}</h2>
+          <h2>聯繫我</h2>
         </div>
         <div className="contact-bottom">
-          <a href="https://www.facebook.com/zhan.y.hui.92?mibextid=LQQJ4d">
-            <img src={facebookImage} alt="" />
-          </a>
-          <p>信箱 : ciuhyi@gmail.com</p>
+          <p>歡迎工作機會洽談或技術交流</p>
+          <div className="contact-links">
+            <a href="mailto:ciuhyi@gmail.com" className="btn-outline">ciuhyi@gmail.com</a>
+            <a href="https://github.com/Yihui01251" target="_blank" rel="noreferrer" className="btn-outline">
+              GitHub
+            </a>
+          </div>
         </div>
       </section>
     </main>
