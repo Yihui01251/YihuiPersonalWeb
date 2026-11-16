@@ -1,26 +1,430 @@
-.portfolio-file {
-    flex: 0 1 auto;
-    min-width: 300px;
-    min-height: 165px;
-    height: 35%;
-    background: url(../assets/images/portfolio-file.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100%;
+/* ============================
+   作品集 / 學習紀錄（Figma 樣式設計：深色內容區、蜜桃漸層自介欄、青色分頁、資料夾卡）
+   ============================ */
+.portfolio-page {
+    flex-direction: row;
+    align-items: stretch;
+    min-height: 80vh;
+    background-color: $font-color-deepBlue;
+}
 
+/* ---------- 自介欄 ---------- */
+.portfolio-sidebar {
+    width: 285px;
+    flex-shrink: 0;
+    background: $background-color-Linear-peachSidebar;
+    box-shadow: inset -2px 0 6px rgba(0, 0, 0, 0.25);
     display: flex;
     flex-direction: column;
-    row-gap: 3%;
-    justify-content: center;
     align-items: center;
-    margin: 0 auto;
+    gap: 24px;
+    padding: 70px 36px 40px;
 
-    h3 {
-        line-height: 3rem;
-        padding-left: 10%;
-        //margin-bottom: 20px;
+    @media (max-width: 768px) {
+        display: none;
+    }
+}
+.sidebar-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+}
+.sidebar-photo {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.sidebar-name {
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+.sidebar-role {
+    font-weight: 700;
+    font-size: 0.9rem;
+
+    &--sub {
+        font-weight: 500;
+        padding: 2px 12px;
+        border-radius: $border-radius-tag;
+        background-color: rgba($background-color-beach-white, 0.6);
+    }
+}
+.sidebar-bio p {
+    line-height: 2;
+    font-size: 0.9rem;
+}
+.sidebar-email {
+    font-size: 0.9rem;
+    color: $font-color-deepBlue;
+    word-break: break-all;
+}
+
+/* ---------- 主內容 ---------- */
+.portfolio-main {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 青色分頁，選中時與深色內容區同色 */
+.portfolio-filters {
+    display: flex;
+    flex-wrap: wrap;
+}
+.filter-btn {
+    width: 150px;
+    height: 50px;
+    border: none;
+    border-right: 1px solid rgba($font-color-deepBlue, 0.6);
+    background-color: $color-wave;
+    color: $font-color-white;
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+
+    &:hover {
+        background-color: lighten($color-wave, 6%);
+    }
+    &--active,
+    &--active:hover {
+        background-color: $font-color-deepBlue;
+        font-weight: 700;
+    }
+    &:focus-visible {
+        outline: 2px solid $color-peach;
+        outline-offset: -4px;
+    }
+    @media (max-width: 640px) {
+        flex: 1;
+        width: auto;
+        font-size: 0.9rem;
+        letter-spacing: 0;
+    }
+}
+
+.portfolio-content {
+    flex: 1;
+    padding: 60px 5vw 80px;
+}
+
+/* ---------- 資料夾作品卡 ---------- */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 56px 40px;
+    align-items: start;
+
+    @media (max-width: 640px) {
+        grid-template-columns: 1fr;
+    }
+}
+.project-card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 0;
+    border: none;
+    background: none;
+    text-align: left;
+    cursor: pointer;
+    color: inherit;
+
+    &:hover .project-folder,
+    &:focus-visible .project-folder {
+        transform: translateY(-6px) rotate(-1deg);
+    }
+    &:focus-visible {
+        outline: 2px solid $color-peach;
+        outline-offset: 6px;
+        border-radius: 12px;
+    }
+}
+/* 資料夾：右上凸起分頁 + 左上折角 */
+.project-folder {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 16 / 10;
+    margin-top: 22px;
+    border-radius: 6px 28px 28px 28px;
+    background-color: $color-beach;
+    transition: transform 0.25s;
+    overflow: visible;
+
+    &::before {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: -22px;
+        width: 72%;
+        height: 40px;
+        border-radius: 28px 28px 0 0;
+        background-color: $color-beach;
+        box-shadow: -6px -4px 0 $color-desert;
     }
     img {
-        width: 75%;
+        position: relative;
+        width: 88%;
+        height: 80%;
+        object-fit: cover;
+        border-radius: 14px;
     }
+}
+.project-folder-label {
+    position: relative;
+    padding: 0 16px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 0.08rem;
+    color: $color-wave;
+}
+.project-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.project-card-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+.project-type,
+.project-cat {
+    padding: 2px 10px;
+    border-radius: $border-radius-tag;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+.project-type {
+    background-color: $color-wave;
+    color: $font-color-white;
+}
+.project-cat {
+    background-color: $color-peach;
+    color: $font-color-deepBlue;
+}
+.project-card-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    color: $font-color-white;
+}
+.project-card-desc {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    letter-spacing: 0.05rem;
+    color: rgba($font-color-white, 0.75);
+}
+.project-card-more {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: $color-peach;
+}
+
+/* 首頁淺色背景上的作品卡：文字改深色 */
+.home .project-card-title {
+    color: $font-color-deepBlue;
+}
+.home .project-card-desc {
+    color: rgba($font-color-deepBlue, 0.8);
+}
+.home .project-card-more {
+    color: $color-wave;
+}
+
+/* ---------- 作品詳情對話框（Figma 作品集/詳情） ---------- */
+.project-modal {
+    width: min(960px, 92vw);
+    max-height: 90vh;
+    padding: 0;
+    border: none;
+    border-radius: 40px;
+    background-color: $color-sky;
+    color: $font-color-deepBlue;
+
+    &::backdrop {
+        background-color: rgba($font-color-deepBlue, 0.75);
+    }
+    @media (max-width: 640px) {
+        border-radius: 24px;
+    }
+}
+.project-modal-inner {
+    position: relative;
+    padding: 50px 8% 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    @media (max-width: 640px) {
+        padding: 40px 20px 30px;
+    }
+}
+.project-modal-close {
+    position: absolute;
+    right: 28px;
+    top: 20px;
+    border: none;
+    background: none;
+    font-size: 2.6rem;
+    line-height: 1;
+    color: $font-color-deepBlue;
+    cursor: pointer;
+}
+.project-modal-title {
+    font-size: 1.8rem;
+    color: $color-wave;
+    padding-right: 40px;
+}
+.project-modal-meta {
+    margin-top: -8px;
+    font-size: 0.85rem;
+}
+.project-modal-media {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.project-modal-screen {
+    flex: 1;
+    min-height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    border: 4px solid rgba($font-color-deepBlue, 0.35);
+    border-radius: 10px;
+    background-color: $font-color-deepBlue;
+
+    img {
+        max-height: 360px;
+        border-radius: 6px;
+        object-fit: contain;
+    }
+}
+.project-modal-summary {
+    max-width: 560px;
+    color: $font-color-white;
+    line-height: 2;
+}
+.project-modal-arrow {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background: none;
+    font-size: 2.4rem;
+    line-height: 1;
+    color: $font-color-deepBlue;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgba($color-wave, 0.12);
+    }
+}
+.project-modal-subtitle {
+    font-size: 1.4rem;
+}
+.project-modal-text {
+    line-height: 1.9;
+}
+.project-modal-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-left: 20px;
+
+    li {
+        list-style: disc;
+        line-height: 1.8;
+        font-size: 0.95rem;
+        color: $font-color-deepBlue;
+    }
+}
+.project-modal-ai {
+    padding: 10px 16px;
+    border-radius: 14px;
+    background-color: rgba($color-peach, 0.7);
+    line-height: 1.8;
+
+    strong {
+        font-weight: 700;
+    }
+}
+.project-modal-links {
+    display: flex;
+    gap: 12px;
+}
+
+/* ---------- 筆記卡（Figma 學習紀錄：深青卡 + 蜜桃標籤 + 細連線） ---------- */
+.note-grid {
+    width: 100%;
+    max-width: 1100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+
+    @media (max-width: 640px) {
+        grid-template-columns: 1fr;
+    }
+}
+.note-card {
+    position: relative;
+    padding: 26px 26px 60px;
+    border-radius: 22px;
+    background-color: $color-wave;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    /* 從標籤延伸出的細線（Figma 卡片右下的連線） */
+    &::after {
+        content: "";
+        position: absolute;
+        right: 18px;
+        bottom: 30px;
+        width: 34%;
+        height: 36%;
+        border-right: 1.5px solid rgba($color-sky, 0.7);
+        border-bottom: 1.5px solid rgba($color-sky, 0.7);
+        border-bottom-right-radius: 24px;
+        pointer-events: none;
+    }
+    p,
+    h3 {
+        color: $font-color-white;
+    }
+}
+.note-meta {
+    font-size: 0.8rem;
+    opacity: 0.75;
+}
+.note-title {
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+.note-desc {
+    font-size: 0.88rem;
+    line-height: 1.8;
+    opacity: 0.9;
+}
+.note-pill {
+    position: absolute;
+    left: 26px;
+    bottom: 18px;
+    padding: 2px 18px;
+    border-radius: $border-radius-tag;
+    background-color: $color-peach;
+    color: $font-color-deepBlue;
+    font-size: 0.8rem;
+    font-weight: 700;
 }

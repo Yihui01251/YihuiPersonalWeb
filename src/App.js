@@ -1,22 +1,15 @@
-//外部檔案
-import { useEffect, useState } from "react";
-import axios from "axios";
-import $ from "jquery";
-//內部檔案
 import "./styleSheet/style.scss";
-import { BrowserRouter as Router } from 'react-router-dom';
-import AppRoutes from './routes';
-
+// GitHub Pages 是靜態主機，HashRouter 讓重新整理與分享子頁連結不會 404
+import { HashRouter as Router } from "react-router-dom";
+import AppRoutes from "./routes";
 
 function App() {
-
   return (
     <div className="App">
       <Router>
-         <AppRoutes/>
+        <AppRoutes />
       </Router>
     </div>
-      
   );
 }
 

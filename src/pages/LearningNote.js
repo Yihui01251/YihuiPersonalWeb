@@ -1,54 +1,39 @@
-import React from "react";
-//導入圖片
-import meImg from '../assets/images/me.png';
+import React, { useState } from "react";
+import ProfileSidebar from "../component/ProfileSidebar";
+import FilterTabs from "../component/FilterTabs";
+import { NOTE_FILTERS, NOTE_TYPES, notes } from "../data/notes";
 
-const LearningNote = ()=>{
-    return(
-        <main className="blogArea">
-        <div className="section-intro">
-            <img src={meImg} alt=""/>
-            <p>詹怡慧</p>
-            <p>歡迎來到我的個人網站！我是一位資訊模擬與設計學系的大學畢業生，擁有兩年C#遊戲開發經驗 ；
-                並主動上職訓局的互動式網頁設計課程實作三個月加深網頁設計的技能。
-                我的網站展示設計和程式的作品和學習經歷，正在朝成為前端工程師的方向前進。</p>
-            </div >
-        <div className="section-content">
-            <div className="btnContainer">
-                <button>全部</button>
-                <button>程式</button>
-                <button>設計</button>
-                <button>其他</button>
-            </div>
-            <div className="contentContainer">
-                <a href="#" className="simple-learnNoteComponent">
-                    <h3>文章標題</h3>
-                    <div className="hugTag">
-                      <p className="tag-card">tag</p>
-                    </div>
-                    
-                  </a>
-                  <a href="#" className="simple-learnNoteComponent">
-                    <h3>文章標題</h3>
-                    <div className="hugTag">
-                      <p className="tag-card">tag</p>
-                    </div>
-                  </a>
-                  <a href="#" className="simple-learnNoteComponent">
-                    <h3>文章標題</h3>
-                    <div className="hugTag">
-                      <p className="tag-card">tag</p>
-                    </div>
-                    </a>
-                    <a href="#" className="simple-learnNoteComponent">
-                        <h3>文章標題</h3>
-                        <div className="hugTag">
-                          <p className="tag-card">tag</p>
-                        </div>
-                        </a>
-           </div>
-            </div>
+const LearningNote = () => {
+  const [activeFilter, setActiveFilter] = useState("all");
+
+  const filtered =
+    activeFilter === "all" ? notes : notes.filter((n) => n.category === activeFilter);
+
+  return (
+    <main className="portfolio-page">
+      <ProfileSidebar>
+        <p>每個工程任務我都會和 AI 協作並留下紀錄：根因、決策與取捨。這裡節錄其中幾篇。</p>
+      </ProfileSidebar>
+
+      <div className="portfolio-main">
+        <FilterTabs filters={NOTE_FILTERS} active={activeFilter} onChange={setActiveFilter} />
+        <div className="portfolio-content">
+          <div className="note-grid">
+            {filtered.map((note) => (
+              <article key={note.id} className="note-card">
+                <p className="note-meta">
+                  {note.date} · {note.stack.join(" / ")}
+                </p>
+                <h3 className="note-title">{note.title}</h3>
+                <p className="note-desc">{note.desc}</p>
+                <span className="note-pill">{NOTE_TYPES[note.type]}</span>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
     </main>
-    )
-}
+  );
+};
 
 export default LearningNote;
