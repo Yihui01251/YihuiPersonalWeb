@@ -13,9 +13,46 @@ export const NOTE_TYPES = {
   feature: "功能",
   research: "研究",
   design: "設計",
+  share: "分享",
 };
 
 export const notes = [
+  {
+    id: 11,
+    title: "團隊分享：AI 協作時代的前端戰略",
+    category: "ai",
+    type: "share",
+    date: "2025-12",
+    stack: ["Clean Code", "TDD", "AGENTS.md"],
+    desc: "14 頁內部分享：AI 協作的三層約束（Interface First、Clean Code、人先定義情境的 TDD 流程），以及從 AGENTS.md 到程式碼審查的完整流程。",
+  },
+  {
+    id: 12,
+    title: "WAF 誤判 Nuxt Icon 批次 API",
+    category: "fullstack",
+    type: "bugfix",
+    date: "2026-03",
+    stack: ["Nuxt3", "WAF", "OWASP CRS"],
+    desc: "OWASP CRS 932120 把 Nuxt Icon 的批次請求判為攻擊。啟用 clientBundle.scan 讓前端從源頭不再發出請求，而不是放寬 WAF 規則。",
+  },
+  {
+    id: 13,
+    title: "內部分享：Nuxt 3 SSR 資料取得",
+    category: "frontend",
+    type: "share",
+    date: "2025-03",
+    stack: ["Nuxt3", "SSR"],
+    desc: "整理 Nuxt 3 在 SSR 與 CSR 之間取得資料的方式與注意事項。",
+  },
+  {
+    id: 14,
+    title: "內部分享：SASS 7-1 架構",
+    category: "frontend",
+    type: "share",
+    date: "2025-02",
+    stack: ["SCSS"],
+    desc: "以 7-1 pattern 組織樣式檔案，讓多人協作的樣式結構一致。",
+  },
   {
     id: 1,
     title: "修復 Nuxt 3 SSR 500：Pinia / Router / useCookie 時序問題",

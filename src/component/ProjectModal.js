@@ -43,8 +43,16 @@ const ProjectModal = ({ project, onClose, onPrev, onNext }) => {
             {" }"}
           </h2>
           <p className="project-modal-meta">
-            {project.type} · {project.category.map(categoryLabel).join(" / ")}
+            {[project.type, project.category.map(categoryLabel).join(" / "), project.period]
+              .filter(Boolean)
+              .join(" · ")}
           </p>
+          {project.role && (
+            <p className="project-modal-role">
+              <strong>角色：</strong>
+              {project.role}
+            </p>
+          )}
 
           <div className="project-modal-media">
             <button type="button" className="project-modal-arrow" onClick={onPrev} aria-label="上一個作品">

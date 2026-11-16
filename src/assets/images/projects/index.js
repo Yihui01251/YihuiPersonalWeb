@@ -6,7 +6,7 @@ import sportsData from "./sports-data.webp";
 import aiStandards from "./ai-standards.webp";
 import aiExtension from "./ai-extension.webp";
 import courseMatching from "./course-matching.webp";
-import surveyPlatform from "./survey-platform.webp";
+import financeEdu from "./finance-edu.webp";
 import knowledgeBase from "./knowledge-base.webp";
 import playBallNow from "./play-ball-now.webp";
 import personalSite from "./personal-site.webp";
@@ -17,7 +17,7 @@ const projectImages = {
   "ai-standards": aiStandards,
   "ai-extension": aiExtension,
   "course-matching": courseMatching,
-  "survey-platform": surveyPlatform,
+  "finance-edu": financeEdu,
   "knowledge-base": knowledgeBase,
   "play-ball-now": playBallNow,
   "personal-site": personalSite,

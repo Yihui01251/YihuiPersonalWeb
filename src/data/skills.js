@@ -13,45 +13,45 @@ export const skillGroups = [
   {
     key: "quality",
     label: "測試 / 品質",
-    items: ["Vitest", "Playwright", "ESLint / Prettier", "Husky", "GitLab CI", "A11y (WCAG AA)"],
+    items: ["Vitest", "Playwright", "Gherkin", "ESLint / Prettier", "Husky", "GitLab CI", "A11y (WCAG AA)", "CSP"],
   },
   {
     key: "ai",
     label: "AI 工具",
-    items: ["Claude Code", "GitHub Copilot", "OpenAI API", "Codex", "Notion API"],
+    items: ["Claude Code", "OpenAI Codex", "OpenAI API", "ChatGPT", "Gemini", "Antigravity", "Notion API"],
   },
 ];
 
-// AI 實際應用：團隊同事與 PM 實際採用的工作流
+// AI 實際應用：核心觀點是用介面契約、分層、測試與 CI 門禁約束 AI 的產出，再把做法變成團隊可安裝的工具
 export const aiPractices = [
   {
-    tag: "Prompt 規範",
-    title: "從 API 文件生成 API Function",
-    desc: "持續調校規範 prompt，餵入 API 文件即可產生符合專案 Service 層規範的 API Function。",
+    tag: "核心做法",
+    title: "用契約與測試約束 AI 產出",
+    desc: "先用 TypeScript 契約與 Gherkin 情境定義好「對的樣子」，再讓 AI 產生測試與實作；分層架構與 CI 門禁守住品質。",
+  },
+  {
+    tag: "Claude Code",
+    title: "規範做成 Claude Code Plugin",
+    desc: "把 9 份前端規範重構成 AI Agent Skill 並加上決策樹調度，打包成 Plugin Marketplace，同事一鍵安裝。",
+  },
+  {
+    tag: "GitLab CI",
+    title: "AI Code Review 接進流水線",
+    desc: "測試強制通過後才做 AI MR Code Review；以 Tag 發版到 Package Registry 讓各專案拉取。",
+  },
+  {
+    tag: "OpenAI API",
+    title: "ai-docs 文件同步 Notion",
+    desc: "依 Git 暫存的變更產生技術文件，以 block-level diff 同步到 Notion，保留同事手動加的截圖。",
   },
   {
     tag: "同事採用",
-    title: "交接文件模板",
-    desc: "制定多個交接文件模板，同事餵程式碼就能產出統一格式的文件，縮短寫文件時間，也提高了大家寫文件的意願。",
+    title: "Prompt 規範與交接文件模板",
+    desc: "調校規範 prompt，餵 API 文件產生 API Function；交接文件模板讓同事餵程式碼就產出統一格式，提高寫文件意願。",
   },
   {
     tag: "PM 回饋",
     title: "Git commit 彙整日 / 週進度",
-    desc: "制定進度匯報規範：提示詞 + Git commit 自動彙整日、週進度。PM 回饋寫得很清楚，並分享給其他同事使用。",
-  },
-  {
-    tag: "Claude Code",
-    title: "把累積的 Context 做成前端 Skill",
-    desc: "將 16 份前端規範重構為 Agent Skill，並打包成 Claude Code Plugin，同事一鍵安裝即可讓 AI 依規範協助開發。",
-  },
-  {
-    tag: "OpenAI API",
-    title: "AI Code Review 與文件自動化",
-    desc: "以 Node.js 串接 OpenAI 與 Notion API：依 staged 變更自動產生技術文件與 Code Review，同步至團隊 Notion。",
-  },
-  {
-    tag: "知識管理",
-    title: "AI 協作，但留下可追溯的紀錄",
-    desc: "100+ 份工程任務紀錄，記下根因分析與決策過程；並持續整理 AI 協作踩坑的 Lessons Learned。",
+    desc: "制定進度匯報規範：提示詞 + Git commit 彙整日、週進度。PM 回饋寫得很清楚，並分享給其他同事使用。",
   },
 ];
