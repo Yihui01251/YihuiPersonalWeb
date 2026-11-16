@@ -7,8 +7,8 @@ export const skillGroups = [
   },
   {
     key: "backend",
-    label: "後端 / 全端",
-    items: ["Node.js", "Nuxt Server Routes (Nitro)", "REST API", "C#"],
+    label: "後端（延伸中）",
+    items: ["Node.js", "Nuxt Server Routes (Nitro)", "REST API"],
   },
   {
     key: "quality",
@@ -43,15 +43,5 @@ export const aiPractices = [
     tag: "OpenAI API",
     title: "ai-docs 文件同步 Notion",
     desc: "依 Git 暫存的變更產生技術文件，以 block-level diff 同步到 Notion，保留同事手動加的截圖。",
-  },
-  {
-    tag: "同事採用",
-    title: "Prompt 規範與交接文件模板",
-    desc: "調校規範 prompt，餵 API 文件產生 API Function；交接文件模板讓同事餵程式碼就產出統一格式，提高寫文件意願。",
-  },
-  {
-    tag: "PM 回饋",
-    title: "Git commit 彙整日 / 週進度",
-    desc: "制定進度匯報規範：提示詞 + Git commit 彙整日、週進度。PM 回饋寫得很清楚，並分享給其他同事使用。",
   },
 ];

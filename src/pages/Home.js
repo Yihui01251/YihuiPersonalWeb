@@ -24,7 +24,7 @@ const Home = () => {
           <p className="hero-board-code">{"{`"}</p>
           <div className="hero-board-text">
             <h1>詹怡慧</h1>
-            <p>Frontend Engineer · Full-stack Ready</p>
+            <p>Frontend Engineer</p>
           </div>
           <p className="hero-board-code">{"`}"}</p>
         </div>
@@ -54,8 +54,8 @@ const Home = () => {
           </div>
           <div className="fact">
             <p className="fact-label">應徵方向</p>
-            <p className="fact-value fact-value--sm">資深前端 / 全端</p>
-            <p className="fact-note">已實作 Nuxt Server Routes</p>
+            <p className="fact-value fact-value--sm">前端負責人</p>
+            <p className="fact-note">架構、工具鏈、標案評估</p>
           </div>
           <div className="fact fact--accent">
             <p className="fact-label">AI 工作流</p>
@@ -72,8 +72,7 @@ const Home = () => {
           <div className="home-about-text">
             <h3>您好！我是詹怡慧</h3>
             <p>
-              從職訓手刻基本功、入職當週自學 Vue，到能定義架構、建立團隊 AI 工具鏈並參與標案評估。
-              一路的主線是：實作 → 提煉 → 分享 → 制度化。
+              從職訓手刻基本功出發，一路成長為能定義架構、建立團隊 AI 工具鏈並參與標案評估的前端工程師。
             </p>
             <Link to="/aboutMe" className="btn-outline">了解我</Link>
           </div>
@@ -108,7 +107,7 @@ const Home = () => {
             <p className="portfolio-teaser-title">
               你能<span>看</span>到...
             </p>
-            <p>Nuxt3 SSR、權限系統、全端 Server Routes、AI 工具鏈，共 {projects.length} 件作品</p>
+            <p>Nuxt3 SSR、權限系統、分層架構、AI 工具鏈，共 {projects.length} 件作品</p>
             <Link to="/portfolio" className="btn-outline">觀看作品集</Link>
           </div>
         </div>

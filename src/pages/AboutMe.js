@@ -32,7 +32,7 @@ const timeline = [
   {
     date: `${workStartLabel} — 現在（${formatExperience()}）`,
     title: `${company}　${jobTitle}`,
-    desc: "Channel+ 前台主要開發者、主導體大運動資料庫重構、金融教育平台唯一前端；建立團隊前端規範與 AI 工具鏈，並負責標案人天評估。",
+    desc: "Channel+ 前台主要開發者、主導體大運動資料庫重構、金融教育平台唯一前端、課程媒合系統前台獨立開發；建立團隊前端規範與 AI 工具鏈，並負責標案人天評估。",
     tech: ["Vue3", "Nuxt3", "TypeScript", "Vitest"],
     current: true,
   },
@@ -68,7 +68,6 @@ const AboutMe = () => {
               <span className="tag">架構與重構</span>
               <span className="tag">團隊 AI 工具鏈</span>
               <span className="tag">技術分享</span>
-              <span className="tag tag--outline">往全端發展</span>
             </div>
             <a href="mailto:ciuhyi@gmail.com" className="aboutMe-email">ciuhyi@gmail.com</a>
           </div>
@@ -76,7 +75,7 @@ const AboutMe = () => {
 
         <div className="aboutMe-intro">
           <p>
-            職訓時從手刻樣式與動畫打基本功，入職當週自學 Vue 就接手既有的金融教育平台。
+            職訓時從手刻樣式與動畫打基本功，入職當週自學 Vue 就接手既有專案。
             之後從第一筆提交開始負責 <strong>Channel+ 教育廣播電台前台（Nuxt 3 SSR）</strong>，
             並主導<strong>體大運動資料庫</strong>的重構。
           </p>
@@ -87,8 +86,7 @@ const AboutMe = () => {
           </p>
           <p>
             我不是單純使用 AI，而是用介面契約、分層架構、測試與 CI 門禁約束 AI 的產出，
-            再把這套做法變成團隊可以安裝的工具。接下來以 Nuxt Server Routes 與 Node.js 為起點，
-            持續往<strong>全端工程師</strong>發展。
+            再把這套做法變成團隊可以安裝的工具。目前專注在前端架構與工具鏈，並以 Nuxt Server Routes 與 Node.js 逐步補上後端能力。
           </p>
         </div>
       </div>
