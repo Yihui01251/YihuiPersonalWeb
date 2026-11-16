@@ -1,24 +1,32 @@
 {
   "files": {
-    "main.css": "/YihuiPersonalWeb/static/css/main.bef6fc27.css",
-    "main.js": "/YihuiPersonalWeb/static/js/main.04cf0460.js",
+    "main.css": "/YihuiPersonalWeb/static/css/main.1b8a239c.css",
+    "main.js": "/YihuiPersonalWeb/static/js/main.85a4e911.js",
     "static/js/453.b2aef8bf.chunk.js": "/YihuiPersonalWeb/static/js/453.b2aef8bf.chunk.js",
     "static/media/GenJyuuGothic-Regular.ttf": "/YihuiPersonalWeb/static/media/GenJyuuGothic-Regular.e201ca409c084f1ec671.ttf",
     "static/media/decorate-aboutMe02.png": "/YihuiPersonalWeb/static/media/decorate-aboutMe02.72d7fd270b08b8b93ca2.png",
     "static/media/1920wave.png": "/YihuiPersonalWeb/static/media/1920wave.50f90f3d9718d980481e.png",
     "static/media/me.png": "/YihuiPersonalWeb/static/media/me.5bf55970b4af0f861b1c.png",
     "static/media/index-portfolio.png": "/YihuiPersonalWeb/static/media/index-portfolio.f9201979862dc7625f50.png",
-    "static/media/protfolio02.png": "/YihuiPersonalWeb/static/media/protfolio02.f16b961f92b2ca28a104.png",
+    "static/media/course-matching.webp": "/YihuiPersonalWeb/static/media/course-matching.9177c93dd9c79456b7f3.webp",
+    "static/media/play-ball-now.webp": "/YihuiPersonalWeb/static/media/play-ball-now.7868a99969a20b9d9109.webp",
+    "static/media/media-platform.webp": "/YihuiPersonalWeb/static/media/media-platform.da7eb86a6cce2f9c7ee2.webp",
+    "static/media/ai-standards.webp": "/YihuiPersonalWeb/static/media/ai-standards.bbcb09fee707ff4c6317.webp",
+    "static/media/knowledge-base.webp": "/YihuiPersonalWeb/static/media/knowledge-base.b8334c72cfc513c1566d.webp",
+    "static/media/personal-site.webp": "/YihuiPersonalWeb/static/media/personal-site.b2526ba6a26822fb0ebd.webp",
+    "static/media/ai-extension.webp": "/YihuiPersonalWeb/static/media/ai-extension.1a2cca9c10972c02c0da.webp",
     "static/media/index-portfolio-book.png": "/YihuiPersonalWeb/static/media/index-portfolio-book.d6af62c28afab2d60042.png",
     "static/media/LOGO.png": "/YihuiPersonalWeb/static/media/LOGO.132c9b487650138faa26.png",
+    "static/media/survey-platform.webp": "/YihuiPersonalWeb/static/media/survey-platform.b534316300b31c7ddc06.webp",
+    "static/media/sports-data.webp": "/YihuiPersonalWeb/static/media/sports-data.a2f678f6bac3ef03f819.webp",
     "static/media/LOGO.svg": "/YihuiPersonalWeb/static/media/LOGO.c70e4990191dc91df089b460d22e3cf2.svg",
     "index.html": "/YihuiPersonalWeb/index.html",
-    "main.bef6fc27.css.map": "/YihuiPersonalWeb/static/css/main.bef6fc27.css.map",
-    "main.04cf0460.js.map": "/YihuiPersonalWeb/static/js/main.04cf0460.js.map",
+    "main.1b8a239c.css.map": "/YihuiPersonalWeb/static/css/main.1b8a239c.css.map",
+    "main.85a4e911.js.map": "/YihuiPersonalWeb/static/js/main.85a4e911.js.map",
     "453.b2aef8bf.chunk.js.map": "/YihuiPersonalWeb/static/js/453.b2aef8bf.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bef6fc27.css",
-    "static/js/main.04cf0460.js"
+    "static/css/main.1b8a239c.css",
+    "static/js/main.85a4e911.js"
   ]
 }
