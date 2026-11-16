@@ -1,7 +1,7 @@
 // 作品集資料：頁面只負責渲染，新增 / 修改專案只需編輯此檔
 // category: frontend | fullstack | ai
 // links: 僅放公開 repo / demo；公司專案不附連結
-import playBallNowImg from "../assets/images/protfolio02.png";
+import projectImages from "../assets/images/projects";
 
 export const PROJECT_FILTERS = [
   { key: "all", label: "全部" },
@@ -29,7 +29,7 @@ export const projects = [
       "21 個 composables 拆分業務邏輯，32 個 Vitest 測試檔 + Playwright",
     ],
     ai: "以 Claude Code 進行根因分析與重構規劃，每次任務皆留存決策紀錄",
-    image: null,
+    image: projectImages["media-platform"],
     links: {},
   },
   {
@@ -48,7 +48,7 @@ export const projects = [
       "53 個 Vitest 測試檔（unit / composables / feature steps），搭配 Husky pre-commit",
     ],
     ai: "撰寫 Copilot / Codex 專案協作設定檔，並以 ai-docs 自動產生文件同步至 Notion",
-    image: null,
+    image: projectImages["sports-data"],
     links: {},
   },
   {
@@ -68,7 +68,7 @@ export const projects = [
       "GitLab CI 範本：Vitest 僅測變更檔、JUnit 報告呈現於 MR",
     ],
     ai: "本專案本身就是 AI 工作流產品，並於團隊內部分享導入方式",
-    image: null,
+    image: projectImages["ai-standards"],
     links: {},
   },
   {
@@ -86,7 +86,7 @@ export const projects = [
       "逐項驗證 6 項技術假設並留存驗收紀錄",
     ],
     ai: "探索「AI 疊加在舊系統上」的整合模式",
-    image: null,
+    image: projectImages["ai-extension"],
     links: {},
   },
   {
@@ -103,7 +103,7 @@ export const projects = [
       "html2canvas + jsPDF 產生可下載的報表 PDF",
       "68 個 Vue 元件，抽出分頁、Loading、Sidebar 等共用元件",
     ],
-    image: null,
+    image: projectImages["course-matching"],
     links: {},
   },
   {
@@ -119,7 +119,7 @@ export const projects = [
       "CSV 解析與 PDF 表格匯出",
       "修復建立問卷時舊草稿與模組參考污染導致的 API 500",
     ],
-    image: null,
+    image: projectImages["survey-platform"],
     links: {},
   },
   {
@@ -135,7 +135,7 @@ export const projects = [
       "Dataview 索引依技術棧 / 時序 / 類型檢視；腳本驗證 frontmatter 格式",
       "Lessons Learned：記錄 AI 協作中踩過的坑與流程修正",
     ],
-    image: null,
+    image: projectImages["knowledge-base"],
     links: {},
   },
   {
@@ -149,7 +149,7 @@ export const projects = [
       "多重標籤篩選貼文、縣市 / 地區連動選單",
       "報名狀態判斷、團主與球友雙向回饋、行程管理",
     ],
-    image: playBallNowImg,
+    image: projectImages["play-ball-now"],
     links: { github: "https://github.com/Yihui01251/Topic_PlayBallNow" },
   },
   {
@@ -160,7 +160,7 @@ export const projects = [
     tech: ["React", "React Router", "SCSS"],
     summary: "就是這個網站。內容與畫面分離，專案、筆記、技能皆由 data 檔驅動。",
     highlights: ["元件化頁面 + 資料檔驅動，新增作品不需改動版面"],
-    image: null,
+    image: projectImages["personal-site"],
     links: { github: "https://github.com/Yihui01251/YihuiPersonalWeb" },
   },
 ];
