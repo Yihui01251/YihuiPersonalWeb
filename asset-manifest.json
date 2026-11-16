@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/YihuiPersonalWeb/static/css/main.76385cea.css",
-    "main.js": "/YihuiPersonalWeb/static/js/main.034c08b5.js",
+    "main.css": "/YihuiPersonalWeb/static/css/main.aed2ac2a.css",
+    "main.js": "/YihuiPersonalWeb/static/js/main.9ac0ee3c.js",
     "static/js/453.b2aef8bf.chunk.js": "/YihuiPersonalWeb/static/js/453.b2aef8bf.chunk.js",
     "static/media/GenJyuuGothic-Regular.ttf": "/YihuiPersonalWeb/static/media/GenJyuuGothic-Regular.e201ca409c084f1ec671.ttf",
     "static/media/decorate-aboutMe02.png": "/YihuiPersonalWeb/static/media/decorate-aboutMe02.72d7fd270b08b8b93ca2.png",
@@ -17,16 +17,16 @@
     "static/media/ai-extension.webp": "/YihuiPersonalWeb/static/media/ai-extension.1a2cca9c10972c02c0da.webp",
     "static/media/index-portfolio-book.png": "/YihuiPersonalWeb/static/media/index-portfolio-book.d6af62c28afab2d60042.png",
     "static/media/LOGO.png": "/YihuiPersonalWeb/static/media/LOGO.132c9b487650138faa26.png",
-    "static/media/survey-platform.webp": "/YihuiPersonalWeb/static/media/survey-platform.b534316300b31c7ddc06.webp",
+    "static/media/finance-edu.webp": "/YihuiPersonalWeb/static/media/finance-edu.b534316300b31c7ddc06.webp",
     "static/media/sports-data.webp": "/YihuiPersonalWeb/static/media/sports-data.a2f678f6bac3ef03f819.webp",
     "static/media/LOGO.svg": "/YihuiPersonalWeb/static/media/LOGO.c70e4990191dc91df089b460d22e3cf2.svg",
     "index.html": "/YihuiPersonalWeb/index.html",
-    "main.76385cea.css.map": "/YihuiPersonalWeb/static/css/main.76385cea.css.map",
-    "main.034c08b5.js.map": "/YihuiPersonalWeb/static/js/main.034c08b5.js.map",
+    "main.aed2ac2a.css.map": "/YihuiPersonalWeb/static/css/main.aed2ac2a.css.map",
+    "main.9ac0ee3c.js.map": "/YihuiPersonalWeb/static/js/main.9ac0ee3c.js.map",
     "453.b2aef8bf.chunk.js.map": "/YihuiPersonalWeb/static/js/453.b2aef8bf.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.76385cea.css",
-    "static/js/main.034c08b5.js"
+    "static/css/main.aed2ac2a.css",
+    "static/js/main.9ac0ee3c.js"
   ]
 }
