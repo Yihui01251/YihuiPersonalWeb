@@ -10,6 +10,16 @@
     row-gap: 50px;
     padding: 75px 6vw 0;
 
+    /* 背景圖固定 1920px 寬、382px 高，手機版資訊區比它高，改為 cover 避免中途斷掉 */
+    @media (max-width: 768px) {
+        background-size: cover;
+        background-position: center top;
+    }
+    @media (max-width: 640px) {
+        padding: 40px 4vw 0;
+        row-gap: 28px;
+    }
+
     .aboutMe-info {
         display: flex;
         align-items: center;
@@ -80,11 +90,20 @@
     flex-direction: column;
     row-gap: 40px;
     padding: 50px 0 80px;
+
+    @media (max-width: 640px) {
+        row-gap: 28px;
+        padding: 32px 0 50px;
+    }
 }
 .aboutMe-section {
     width: 100%;
     padding: 0 6vw;
     align-items: stretch;
+
+    @media (max-width: 640px) {
+        padding: 0 4vw;
+    }
 }
 
 /* 標題 + 幾何裝飾（原設計） */
@@ -111,7 +130,7 @@
 /* ---------- 工作亮點 ---------- */
 .strength-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr));
     gap: 24px;
 
     @media (max-width: 640px) {
@@ -182,6 +201,9 @@
         border: 8px solid transparent;
         border-left: 14px solid #7ed3e6;
     }
+    @media (max-width: 900px) and (min-width: 769px) {
+        column-gap: 16px;
+    }
 }
 .timeline-item {
     display: grid;
@@ -198,6 +220,9 @@
     color: $font-color-white;
     font-weight: 700;
     line-height: 1.5;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
 }
 .timeline-dot {
     align-self: center;
@@ -221,6 +246,8 @@
     max-width: 300px;
     line-height: 1.8;
     font-size: 0.9rem;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 .timeline-tech {
     font-size: 0.8rem;
@@ -266,6 +293,7 @@
 .aboutMe-company {
     font-weight: 700;
     color: $color-wave;
+    text-wrap: balance;
 }
 .aboutMe-lead {
     margin: -14px 0 24px;

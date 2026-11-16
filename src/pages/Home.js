@@ -24,7 +24,11 @@ const Home = () => {
           <p className="hero-board-code">{"{`"}</p>
           <div className="hero-board-text">
             <h1>詹怡慧</h1>
-            <p>Frontend Engineer · Full-stack Ready</p>
+            <p>
+              <span>Frontend Engineer</span>
+              <span className="hero-board-sep" aria-hidden="true"> · </span>
+              <span>Full-stack Ready</span>
+            </p>
           </div>
           <p className="hero-board-code">{"`}"}</p>
         </div>
