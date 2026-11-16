@@ -13,10 +13,10 @@
     "jquery": "^3.7.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.23.1",
+    "react-router-dom": "^7.18.5",
     "react-scripts": "5.0.1",
     "sass": "^1.77.4",
-    "swiper": "^11.1.4",
+    "swiper": "^12.2.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -44,5 +44,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "overrides": {
+    "nth-check": "^2.1.1",
+    "postcss": "^8.5.33",
+    "underscore": "^1.13.8",
+    "sucrase": "^3.35.1"
   }
 }
