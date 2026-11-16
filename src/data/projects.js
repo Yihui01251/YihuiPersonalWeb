@@ -28,7 +28,7 @@ export const projects = [
       "SSR 與 CSR 共用的分頁資料流（useAsyncData + useInfinitePager），Server Proxy 統一處理 Cookie 與參數編碼",
       "Episode 資料改為 DTO、Domain + Mapper 結構，形成 Anti-Corruption Layer 隔離後端格式不一致",
       "解決 Hydration mismatch、useState 狀態污染，以及 app.vue setup 早於 Pinia / Router 掛載造成的連續 SSR 500",
-      "政府網站合規：無障礙 AA（ARIA、accesskey、字級調整）、sitemap 與 robots；雙端結構化錯誤日誌（每日輪替）",
+      "政府網站合規：無障礙 AA（ARIA、accesskey、字級調整）、sitemap 與 robots、GTM 串接 GA；雙端結構化錯誤日誌（每日輪替）",
       "資安：WAF 誤判 Nuxt Icon 批次請求，改由前端從源頭不再發出該請求，而不是要求放寬 WAF 規則",
       "32 個測試檔，其中 4 個為 Playwright E2E",
       "2026-09 負責 STT 逐字稿與字幕整合的範圍定案與人天評估",
