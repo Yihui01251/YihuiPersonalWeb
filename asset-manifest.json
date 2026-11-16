@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/YihuiPersonalWeb/static/css/main.1b8a239c.css",
-    "main.js": "/YihuiPersonalWeb/static/js/main.85a4e911.js",
+    "main.css": "/YihuiPersonalWeb/static/css/main.76385cea.css",
+    "main.js": "/YihuiPersonalWeb/static/js/main.034c08b5.js",
     "static/js/453.b2aef8bf.chunk.js": "/YihuiPersonalWeb/static/js/453.b2aef8bf.chunk.js",
     "static/media/GenJyuuGothic-Regular.ttf": "/YihuiPersonalWeb/static/media/GenJyuuGothic-Regular.e201ca409c084f1ec671.ttf",
     "static/media/decorate-aboutMe02.png": "/YihuiPersonalWeb/static/media/decorate-aboutMe02.72d7fd270b08b8b93ca2.png",
@@ -21,12 +21,12 @@
     "static/media/sports-data.webp": "/YihuiPersonalWeb/static/media/sports-data.a2f678f6bac3ef03f819.webp",
     "static/media/LOGO.svg": "/YihuiPersonalWeb/static/media/LOGO.c70e4990191dc91df089b460d22e3cf2.svg",
     "index.html": "/YihuiPersonalWeb/index.html",
-    "main.1b8a239c.css.map": "/YihuiPersonalWeb/static/css/main.1b8a239c.css.map",
-    "main.85a4e911.js.map": "/YihuiPersonalWeb/static/js/main.85a4e911.js.map",
+    "main.76385cea.css.map": "/YihuiPersonalWeb/static/css/main.76385cea.css.map",
+    "main.034c08b5.js.map": "/YihuiPersonalWeb/static/js/main.034c08b5.js.map",
     "453.b2aef8bf.chunk.js.map": "/YihuiPersonalWeb/static/js/453.b2aef8bf.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1b8a239c.css",
-    "static/js/main.85a4e911.js"
+    "static/css/main.76385cea.css",
+    "static/js/main.034c08b5.js"
   ]
 }
