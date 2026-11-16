@@ -35,9 +35,9 @@
 /* 米白立體方塊（原設計的裝飾） */
 .hero-block {
     position: absolute;
-    background-color: $background-color-beach-white;
+    background-color: $color-peach;
     border-radius: 10px;
-    box-shadow: inset -6px -6px 4px rgba(8, 63, 72, 0.25);
+    box-shadow: inset -6px -6px 0 rgba(150, 110, 70, 0.3);
     animation: blockFloat 6s ease-in-out infinite;
 
     &--1 {
@@ -132,16 +132,10 @@
     }
 }
 
-.hero-stack {
-    position: relative;
-    z-index: 1;
-    margin-top: 18px;
-    color: $color-wave;
-    font-weight: 700;
-}
 .hero-desc {
     position: relative;
     z-index: 1;
+    margin-top: 24px;
     max-width: 640px;
     line-height: 1.9;
 }
@@ -152,6 +146,69 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 16px;
+}
+
+/* ---------- 快速資訊（bento 格狀卡，參考風格參考圖） ---------- */
+.facts {
+    padding: 10px 6vw 30px;
+}
+.facts-grid {
+    width: 100%;
+    max-width: 1100px;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 16px;
+
+    @media (max-width: 900px) {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+.fact {
+    padding: 24px 26px;
+    border-radius: 28px;
+    background-color: rgba($background-color-beach-white, 0.85);
+    box-shadow: 0 8px 20px rgba(8, 63, 72, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    &--wide {
+        background-color: $color-wave;
+        p {
+            color: $font-color-white;
+        }
+    }
+    &--accent {
+        background-color: $color-peach;
+    }
+    @media (max-width: 900px) {
+        &--wide {
+            grid-column: 1 / -1;
+        }
+    }
+}
+.fact-label {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+.fact-value {
+    font-size: 2.4rem;
+    font-weight: 900;
+    letter-spacing: 0.05rem;
+    line-height: 1.2;
+
+    &--sm {
+        font-size: 1.3rem;
+        font-weight: 700;
+    }
+}
+.fact-note {
+    font-size: 0.8rem;
+    opacity: 0.75;
+}
+
+.home-ai-more {
+    margin-top: 36px;
 }
 
 /* ---------- 共用：引號標題（原設計 "關於我"） ---------- */

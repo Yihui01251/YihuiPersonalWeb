@@ -2,14 +2,17 @@ import React from "react";
 import { Link } from "react-router-dom";
 import meImage from "../assets/images/me.png";
 import portfolioBookImage from "../assets/images/index-portfolio-book.png";
-import ProjectCard from "../component/ProjectCard";
+import ProjectGallery from "../component/ProjectGallery";
 import { featuredProjects, projects } from "../data/projects";
 import { skillGroups, aiPractices } from "../data/skills";
+import { formatExperience, workStartLabel } from "../data/experience";
 
 const Home = () => {
+  const experience = formatExperience();
+
   return (
     <main className="home">
-      {/* Hero：保留原設計的傾斜程式碼看板，放入姓名與職稱讓 HR 第一眼看到 */}
+      {/* Hero：Figma 的傾斜程式碼看板，放入姓名與職稱讓 HR 第一眼看到 */}
       <section className="hero">
         <span className="hero-block hero-block--1"></span>
         <span className="hero-block hero-block--2"></span>
@@ -25,7 +28,6 @@ const Home = () => {
           <p className="hero-board-code">{"`}"}</p>
         </div>
 
-        <p className="hero-stack">Vue3 / Nuxt3 · TypeScript · 架構設計 · AI 協作工作流</p>
         <p className="hero-desc">
           重視 SOLID 與 Clean Code 的前端工程師，負責過多角色權限平台與 Nuxt 3 SSR 影音平台；
           並把 AI 導入團隊流程：將規範做成 AI Skill、自動化 Code Review 與技術文件。
@@ -33,6 +35,32 @@ const Home = () => {
         <div className="hero-cta">
           <Link to="/portfolio" className="btn-primary">查看作品集</Link>
           <a href="mailto:ciuhyi@gmail.com" className="btn-outline">聯繫我</a>
+        </div>
+      </section>
+
+      {/* 快速資訊（bento）：HR 最常找的四件事 */}
+      <section className="facts" aria-label="快速資訊">
+        <div className="facts-grid">
+          <div className="fact fact--wide">
+            <p className="fact-label">前端工作經驗</p>
+            <p className="fact-value">{experience}</p>
+            <p className="fact-note">{workStartLabel} 起至今</p>
+          </div>
+          <div className="fact">
+            <p className="fact-label">主力技術</p>
+            <p className="fact-value fact-value--sm">Vue3 / Nuxt3</p>
+            <p className="fact-note">TypeScript · Pinia · Vitest</p>
+          </div>
+          <div className="fact">
+            <p className="fact-label">應徵方向</p>
+            <p className="fact-value fact-value--sm">資深前端 / 全端</p>
+            <p className="fact-note">已實作 Nuxt Server Routes</p>
+          </div>
+          <div className="fact fact--accent">
+            <p className="fact-label">AI 工作流</p>
+            <p className="fact-value fact-value--sm">100+ 份協作紀錄</p>
+            <p className="fact-note">Claude Code Skill / Plugin</p>
+          </div>
         </div>
       </section>
 
@@ -55,11 +83,7 @@ const Home = () => {
       {/* 精選專案 */}
       <section className="home-projects">
         <h2 className="quote-title">精選專案</h2>
-        <div className="project-grid home-projects-grid">
-          {featuredProjects.map((p) => (
-            <ProjectCard key={p.id} project={p} compact />
-          ))}
-        </div>
+        <ProjectGallery projects={featuredProjects} className="home-projects-grid" />
 
         <div className="portfolio-teaser">
           <img src={portfolioBookImage} alt="" aria-hidden="true" />
@@ -73,7 +97,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* AI 應用 */}
+      {/* AI 應用：Figma 學習紀錄卡樣式（深青卡 + 蜜桃標籤） */}
       <section className="home-ai">
         <h2 className="quote-title">AI 應用在工作上</h2>
         <p className="section-lead">不只是用 AI 寫 code，而是把它變成團隊可以重複使用的流程</p>
@@ -86,6 +110,7 @@ const Home = () => {
             </article>
           ))}
         </div>
+        <Link to="/learningNote" className="btn-outline home-ai-more">看工程學習紀錄</Link>
       </section>
 
       {/* 技術棧 */}
@@ -105,7 +130,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 聯繫我：原設計的海浪 + 沙灘 */}
+      {/* 聯繫我：海浪 + 沙灘 */}
       <section className="index-contact">
         <div className="contact-top">
           <h2>聯繫我</h2>

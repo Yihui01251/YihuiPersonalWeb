@@ -285,6 +285,12 @@ section {
     }
 }
 
+/* Figma：作品集 / 學習紀錄頁的深色頁首 */
+header.header--dark {
+    background-color: $color-header-dark;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.35);
+}
+
 /* 導覽列目前頁面 */
 #menu .nav-link--active {
     border-bottom: 2px solid $color-wave;

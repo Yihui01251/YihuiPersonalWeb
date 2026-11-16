@@ -3,6 +3,7 @@ import meImage from "../assets/images/me.png";
 import titleDecoSquare from "../assets/images/aboutMe-title01.png";
 import titleDecoCircle from "../assets/images/aboutMe-title.png";
 import { skillGroups, aiPractices } from "../data/skills";
+import { formatExperience, workStartLabel } from "../data/experience";
 
 // 依時間順序（舊 → 新），桌面版橫向時間軸、手機版直向
 const timeline = [
@@ -19,7 +20,7 @@ const timeline = [
     tech: ["JavaScript", "React", "Sass"],
   },
   {
-    date: "2024 — 現在",
+    date: `${workStartLabel} — 現在（${formatExperience()}）`,
     title: "前端工程師",
     desc: "Vue3 / Nuxt3 產品開發；推動 Service 層重構、測試與 CI，並建立團隊 AI 協作規範與工具。",
     tech: ["Vue3", "Nuxt3", "TypeScript", "Vitest"],

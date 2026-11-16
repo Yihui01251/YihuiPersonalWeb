@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import meImg from "../assets/images/me.png";
-import ProjectCard from "../component/ProjectCard";
+import ProfileSidebar from "../component/ProfileSidebar";
+import FilterTabs from "../component/FilterTabs";
+import ProjectGallery from "../component/ProjectGallery";
 import { PROJECT_FILTERS, projects } from "../data/projects";
 
 const Portfolio = () => {
@@ -11,41 +12,15 @@ const Portfolio = () => {
 
   return (
     <main className="portfolio-page">
-      <aside className="portfolio-sidebar">
-        <div className="sidebar-profile">
-          <img src={meImg} alt="詹怡慧" className="sidebar-photo" />
-          <p className="sidebar-name">詹怡慧</p>
-          <p className="sidebar-role">Frontend Engineer</p>
-          <p className="sidebar-role sidebar-role--sub">Full-stack Ready</p>
-        </div>
-        <div className="sidebar-bio">
-          <p>公司專案因保密不附原始碼連結，展開「技術重點」可看到我負責的架構與實作細節。</p>
-        </div>
-        <div className="sidebar-contact">
-          <a href="mailto:ciuhyi@gmail.com" className="sidebar-email">ciuhyi@gmail.com</a>
-        </div>
-      </aside>
+      <ProfileSidebar>
+        <p>點擊作品可看到我負責的架構與實作細節。公司專案因保密不附原始碼連結。</p>
+      </ProfileSidebar>
 
       <div className="portfolio-main">
-        <div className="portfolio-filters">
-          {PROJECT_FILTERS.map((f) => (
-            <button
-              key={f.key}
-              className={`filter-btn ${activeFilter === f.key ? "filter-btn--active" : ""}`}
-              aria-pressed={activeFilter === f.key}
-              onClick={() => setActiveFilter(f.key)}
-            >
-              {f.label}
-            </button>
-          ))}
-        </div>
-
+        <FilterTabs filters={PROJECT_FILTERS} active={activeFilter} onChange={setActiveFilter} />
         <div className="portfolio-content">
-          <div className="project-grid">
-            {filtered.map((project) => (
-              <ProjectCard key={project.id} project={project} />
-            ))}
-          </div>
+          {/* key 讓切換篩選時重置詳情對話框的索引 */}
+          <ProjectGallery key={activeFilter} projects={filtered} />
         </div>
       </div>
     </main>
