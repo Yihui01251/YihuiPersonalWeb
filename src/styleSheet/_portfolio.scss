@@ -1,3 +1,6 @@
+@use "sass:color";
+@use "variables" as *;
+
 /* ============================
    作品集 / 學習紀錄（Figma 樣式設計：深色內容區、蜜桃漸層自介欄、青色分頁、資料夾卡）
    ============================ */
@@ -88,7 +91,7 @@
     transition: background-color 0.2s;
 
     &:hover {
-        background-color: lighten($color-wave, 6%);
+        background-color: color.adjust($color-wave, $lightness: 6%);
     }
     &--active,
     &--active:hover {
