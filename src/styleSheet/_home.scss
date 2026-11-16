@@ -234,10 +234,58 @@
 }
 
 .home-about,
+.home-strengths,
 .home-projects,
 .home-ai,
 .home-skills {
     padding: 70px 6vw;
+}
+
+/* ---------- 核心特質：編號清單 ---------- */
+.highlight-list {
+    width: 100%;
+    max-width: 900px;
+    border-radius: 30px;
+    padding: 10px 40px;
+    background-color: $background-color-beach-white-s;
+    box-shadow: -2px -4px 5px 0 $box-shadow;
+
+    @media (max-width: 640px) {
+        padding: 6px 20px;
+    }
+}
+.highlight-item {
+    display: flex;
+    gap: 28px;
+    align-items: flex-start;
+    padding: 26px 0;
+    border-bottom: 1px dashed rgba($color-wave, 0.3);
+
+    &:last-child {
+        border-bottom: none;
+    }
+    @media (max-width: 640px) {
+        gap: 16px;
+    }
+}
+.highlight-num {
+    flex-shrink: 0;
+    min-width: 56px;
+    font-size: 2.2rem;
+    font-weight: 900;
+    line-height: 1;
+    color: $color-peach;
+    -webkit-text-stroke: 1px rgba($color-wave, 0.4);
+}
+.highlight-content {
+    h3 {
+        font-size: 1.25rem;
+        margin-bottom: 8px;
+    }
+    p {
+        line-height: 1.9;
+        font-size: 0.95rem;
+    }
 }
 
 /* ---------- 關於我：雲朵 + 圓形照片 ---------- */

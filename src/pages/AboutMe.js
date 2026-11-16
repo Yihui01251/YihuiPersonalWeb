@@ -4,6 +4,7 @@ import titleDecoSquare from "../assets/images/aboutMe-title01.png";
 import titleDecoCircle from "../assets/images/aboutMe-title.png";
 import { skillGroups, aiPractices } from "../data/skills";
 import { formatExperience, workStartLabel } from "../data/experience";
+import { strengths } from "../data/strengths";
 
 // 依時間順序（舊 → 新），桌面版橫向時間軸、手機版直向
 const timeline = [
@@ -22,7 +23,7 @@ const timeline = [
   {
     date: `${workStartLabel} — 現在（${formatExperience()}）`,
     title: "前端工程師",
-    desc: "Vue3 / Nuxt3 產品開發；推動 Service 層重構、測試與 CI，並建立團隊 AI 協作規範與工具。",
+    desc: "獨立開發前台並同時維護 1–2 個專案；推動 Service 層重構、測試與 CI，建立團隊 AI 協作規範。帶實習生、參與面試，主導前端進度 sync。",
     tech: ["Vue3", "Nuxt3", "TypeScript", "Vitest"],
     current: true,
   },
@@ -49,6 +50,7 @@ const AboutMe = () => {
               <span className="tag">Vue3 / Nuxt3</span>
               <span className="tag">架構設計 · SOLID</span>
               <span className="tag">AI 協作工作流</span>
+              <span className="tag">帶人 · 技術交流</span>
               <span className="tag tag--outline">往全端發展</span>
             </div>
             <a href="mailto:ciuhyi@gmail.com" className="aboutMe-email">ciuhyi@gmail.com</a>
@@ -65,7 +67,12 @@ const AboutMe = () => {
             可測試的 composables，<strong>SOLID</strong> 與 <strong>Clean Code</strong> 是我評估設計的基準。
           </p>
           <p>
-            我也把 <strong>AI 導入團隊流程</strong>，並以 Nuxt Server Routes 與 Node.js 為起點，
+            到職 1 週就接手開發中的專案並提前完成；能預估工時，至今<strong>沒有延誤過時程</strong>。
+            除了開發，我也帶實習生與新進同事、參與前端面試，並主導團隊的進度 sync 與技術交流。
+          </p>
+          <p>
+            我把 <strong>AI 導入團隊流程</strong>：交接文件模板、Git commit 彙整進度報告等做法，
+            已經是同事與 PM 實際在用的工具。接下來以 Nuxt Server Routes 與 Node.js 為起點，
             持續往<strong>全端工程師</strong>發展。
           </p>
         </div>
@@ -88,7 +95,26 @@ const AboutMe = () => {
         </section>
 
         <section className="aboutMe-section">
-          <SectionTitle deco={titleDecoCircle}>技能</SectionTitle>
+          <SectionTitle deco={titleDecoCircle}>工作亮點</SectionTitle>
+          <div className="strength-grid">
+            {strengths.map((s, i) => (
+              <article key={s.title} className="strength-card">
+                <h3>
+                  <span className="strength-num" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
+                  {s.title}
+                </h3>
+                <ul>
+                  {s.points.map((p) => (
+                    <li key={p}>{p}</li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="aboutMe-section">
+          <SectionTitle deco={titleDecoSquare}>技能</SectionTitle>
           <div className="skill-panel">
             {skillGroups.map((g) => (
               <div key={g.key} className="skill-row">
@@ -104,7 +130,7 @@ const AboutMe = () => {
         </section>
 
         <section className="aboutMe-section">
-          <SectionTitle deco={titleDecoSquare}>我如何運用 AI</SectionTitle>
+          <SectionTitle deco={titleDecoCircle}>我如何運用 AI</SectionTitle>
           <div className="note-grid">
             {aiPractices.map((a) => (
               <article key={a.title} className="note-card">

@@ -22,11 +22,26 @@ export const skillGroups = [
   },
 ];
 
-// AI 實際應用：每一項都對應到作品集中的專案
+// AI 實際應用：團隊同事與 PM 實際採用的工作流
 export const aiPractices = [
   {
+    tag: "Prompt 規範",
+    title: "從 API 文件生成 API Function",
+    desc: "持續調校規範 prompt，餵入 API 文件即可產生符合專案 Service 層規範的 API Function。",
+  },
+  {
+    tag: "同事採用",
+    title: "交接文件模板",
+    desc: "制定多個交接文件模板，同事餵程式碼就能產出統一格式的文件，縮短寫文件時間，也提高了大家寫文件的意願。",
+  },
+  {
+    tag: "PM 回饋",
+    title: "Git commit 彙整日 / 週進度",
+    desc: "制定進度匯報規範：提示詞 + Git commit 自動彙整日、週進度。PM 回饋寫得很清楚，並分享給其他同事使用。",
+  },
+  {
     tag: "Claude Code",
-    title: "把團隊規範變成 AI 會遵守的 Skill",
+    title: "把累積的 Context 做成前端 Skill",
     desc: "將 16 份前端規範重構為 Agent Skill，並打包成 Claude Code Plugin，同事一鍵安裝即可讓 AI 依規範協助開發。",
   },
   {
