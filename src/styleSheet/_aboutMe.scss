@@ -10,6 +10,11 @@
     row-gap: 50px;
     padding: 75px 6vw 0;
 
+    /* 背景圖固定 1920px 寬、382px 高，手機版資訊區比它高，改為 cover 避免中途斷掉 */
+    @media (max-width: 768px) {
+        background-size: cover;
+        background-position: center top;
+    }
     @media (max-width: 640px) {
         padding: 40px 4vw 0;
         row-gap: 28px;
@@ -125,7 +130,7 @@
 /* ---------- 工作亮點 ---------- */
 .strength-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr));
     gap: 24px;
 
     @media (max-width: 640px) {
@@ -288,6 +293,7 @@
 .aboutMe-company {
     font-weight: 700;
     color: $color-wave;
+    text-wrap: balance;
 }
 .aboutMe-lead {
     margin: -14px 0 24px;

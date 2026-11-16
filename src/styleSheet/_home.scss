@@ -134,6 +134,17 @@
         color: $color-sky;
         font-size: 1rem;
         letter-spacing: 0.08rem;
+        @media (max-width: 480px) {
+            font-size: 0.85rem;
+            letter-spacing: 0.04rem;
+
+            span {
+                display: block;
+            }
+            .hero-board-sep {
+                display: none;
+            }
+        }
     }
 }
 
@@ -190,8 +201,10 @@
     &--accent {
         background-color: $color-peach;
     }
+    /* 兩欄時讓首尾兩張卡都橫跨，避免最後一張孤立在左側 */
     @media (max-width: 900px) {
-        &--wide {
+        &--wide,
+        &--accent {
             grid-column: 1 / -1;
         }
     }

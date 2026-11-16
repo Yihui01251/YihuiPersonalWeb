@@ -129,6 +129,11 @@ header {
         }
     }
 }
+/* body 是置中的 column flex，#root 必須有明確寬度，否則會依子元素 min-content 撐寬 */
+#root,
+.App {
+    width: 100%;
+}
 main {
     flex: 1;
     width: 100%;
