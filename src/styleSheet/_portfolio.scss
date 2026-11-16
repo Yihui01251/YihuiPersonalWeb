@@ -304,9 +304,17 @@
     background-color: $font-color-deepBlue;
 
     img {
-        max-height: 360px;
+        display: block;
+        width: 100%;
+        height: auto;
         border-radius: 6px;
-        object-fit: contain;
+    }
+
+    /* 有截圖時讓圖片填滿框線 */
+    &:has(img) {
+        padding: 0;
+        min-height: 0;
+        overflow: hidden;
     }
 }
 .project-modal-summary {
