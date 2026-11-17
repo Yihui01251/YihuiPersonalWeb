@@ -1,6 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { PROJECT_FILTERS, projects, featuredProjects } from "./projects";
 import { NOTE_FILTERS, NOTE_TYPES, notes } from "./notes";
+import { PROJECT_IDS } from "../../shared/projectIds.js";
 
 // 頁面完全由資料檔驅動，資料寫錯不會報錯只會默默少一張卡，所以用測試守住
 describe("作品資料", () => {
@@ -9,6 +10,10 @@ describe("作品資料", () => {
   it("id 不重複", () => {
     const ids = projects.map((p) => p.id);
     expect(new Set(ids).size).toBe(ids.length);
+  });
+
+  it("和後端接受的作品 id 清單一致，否則新作品的瀏覽數會記不進去", () => {
+    expect(projects.map((p) => p.id).sort()).toEqual([...PROJECT_IDS].sort());
   });
 
   it.each(projects)("$id 具備卡片與詳情所需欄位", (project) => {
