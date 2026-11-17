@@ -81,8 +81,8 @@ a {
 /* Set text color and font for the whole document */
 body {
     max-width: 1920px;
-    width: 100vw;
-    min-height: 1080px;
+    width: 100%;
+    min-height: 100dvh;
     height: auto;
     background-image: $background-color-Linear-shallowSea;
     color: #555;
@@ -99,7 +99,8 @@ body {
 
 header {
     width: 100%;
-    height: 15%;
+    height: auto;
+    min-height: 60px;
     background-color:$color-sky;
     box-shadow: 0px 4px 4px 0 rgba(0, 0, 0, 0.25);
 
@@ -139,6 +140,11 @@ header {
             border-bottom: $color-desert solid 2px;
         }
     }
+}
+/* body 是置中的 column flex，#root 必須有明確寬度，否則會依子元素 min-content 撐寬 */
+#root,
+.App {
+    width: 100%;
 }
 main {
     flex: 1;
@@ -185,7 +191,7 @@ footer {
 
 /* 主內容(section) */
 section {
-    width: 100vw;
+    width: 100%;
     height: auto;
     display: flex;
     flex-direction: column;

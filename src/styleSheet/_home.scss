@@ -32,6 +32,11 @@
     padding: 90px 6vw 70px;
     gap: 22px;
     text-align: center;
+
+    @media (max-width: 480px) {
+        padding: 56px 5vw 48px;
+        gap: 16px;
+    }
 }
 
 /* 米白立體方塊（原設計的裝飾） */
@@ -131,6 +136,17 @@
         color: $color-sky;
         font-size: 1rem;
         letter-spacing: 0.08rem;
+        @media (max-width: 480px) {
+            font-size: 0.85rem;
+            letter-spacing: 0.04rem;
+
+            span {
+                display: block;
+            }
+            .hero-board-sep {
+                display: none;
+            }
+        }
     }
 }
 
@@ -138,6 +154,7 @@
     position: relative;
     z-index: 1;
     margin-top: 24px;
+    width: 100%;
     max-width: 640px;
     line-height: 1.9;
 }
@@ -164,6 +181,9 @@
     @media (max-width: 900px) {
         grid-template-columns: 1fr 1fr;
     }
+    @media (max-width: 480px) {
+        grid-template-columns: 1fr;
+    }
 }
 .fact {
     padding: 24px 26px;
@@ -183,10 +203,15 @@
     &--accent {
         background-color: $color-peach;
     }
+    /* 兩欄時讓首尾兩張卡都橫跨，避免最後一張孤立在左側 */
     @media (max-width: 900px) {
-        &--wide {
+        &--wide,
+        &--accent {
             grid-column: 1 / -1;
         }
+    }
+    @media (max-width: 480px) {
+        padding: 18px 20px;
     }
 }
 .fact-label {
@@ -241,6 +266,10 @@
 .home-ai,
 .home-skills {
     padding: 70px 6vw;
+
+    @media (max-width: 640px) {
+        padding: 48px 5vw;
+    }
 }
 
 /* ---------- 核心特質：編號清單 ---------- */
@@ -333,6 +362,11 @@
     border-radius: 50%;
     object-fit: cover;
     flex-shrink: 0;
+
+    @media (max-width: 480px) {
+        width: 180px;
+        height: 180px;
+    }
 }
 
 /* ---------- 精選專案 ---------- */
@@ -362,6 +396,17 @@
             width: 70px;
         }
     }
+    @media (max-width: 480px) {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 16px;
+        padding: 24px 8%;
+
+        img {
+            width: 60px;
+        }
+    }
 }
 .portfolio-teaser-content {
     display: flex;
@@ -371,6 +416,9 @@
 
     p {
         line-height: 1.7;
+    }
+    @media (max-width: 480px) {
+        align-items: center;
     }
 }
 .portfolio-teaser-title {
@@ -400,10 +448,11 @@
     display: grid;
     grid-template-columns: 150px 1fr;
     gap: 14px;
-    align-items: center;
+    align-items: start;
 
     @media (max-width: 640px) {
         grid-template-columns: 1fr;
+        gap: 8px;
     }
 }
 .skill-row-label {
@@ -425,6 +474,11 @@
         align-items: flex-end;
         justify-content: center;
         padding-bottom: 40px;
+
+        @media (max-width: 640px) {
+            height: 180px;
+            padding-bottom: 24px;
+        }
     }
     .contact-bottom {
         width: 100%;

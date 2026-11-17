@@ -23,6 +23,10 @@
     gap: 24px;
     padding: 70px 36px 40px;
 
+    @media (max-width: 1024px) {
+        width: 240px;
+        padding: 50px 24px 32px;
+    }
     @media (max-width: 768px) {
         display: none;
     }
@@ -102,9 +106,13 @@
         outline: 2px solid $color-peach;
         outline-offset: -4px;
     }
-    @media (max-width: 640px) {
-        flex: 1;
+    /* 側欄佔掉空間後固定 150px 會折行，改為平均分配 */
+    @media (max-width: 1024px) {
+        flex: 1 1 0;
         width: auto;
+        min-width: 0;
+    }
+    @media (max-width: 640px) {
         font-size: 0.9rem;
         letter-spacing: 0;
     }
@@ -118,7 +126,7 @@
 /* ---------- 資料夾作品卡 ---------- */
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
     gap: 56px 40px;
     align-items: start;
 
@@ -380,7 +388,7 @@
     width: 100%;
     max-width: 1100px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
     gap: 30px;
 
     @media (max-width: 640px) {
