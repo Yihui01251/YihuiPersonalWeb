@@ -6,10 +6,11 @@ export const NAV_ITEMS = [
   { path: "/aboutMe", label: "關於我" },
   { path: "/portfolio", label: "作品集" },
   { path: "/learningNote", label: "學習紀錄" },
+  { path: "/guestbook", label: "留言板" },
 ];
 
 // Figma：作品集與學習紀錄頁使用深色頁首
-const DARK_PAGES = ["/portfolio", "/learningNote"];
+const DARK_PAGES = ["/portfolio", "/learningNote", "/guestbook", "/admin"];
 
 const Header = () => {
   const { pathname } = useLocation();

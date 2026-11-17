@@ -5,6 +5,8 @@ import Home from "./pages/Home";
 import AboutMe from "./pages/AboutMe";
 import Portfolio from "./pages/Portfolio";
 import LearningNote from "./pages/LearningNote";
+import Guestbook from "./pages/Guestbook";
+import Admin from "./pages/Admin";
 import Header from "./component/Header";
 import Footer from "./component/Footer";
 
@@ -27,6 +29,8 @@ const AppRoutes = () => {
         <Route path="/aboutMe" element={<AboutMe />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/learningNote" element={<LearningNote />} />
+        <Route path="/guestbook" element={<Guestbook />} />
+        <Route path="/admin" element={<Admin />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
       <Footer />

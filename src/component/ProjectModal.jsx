@@ -3,7 +3,7 @@ import { categoryLabel } from "./ProjectCard";
 
 // Figma「作品集/詳情」：{ 作品名稱 }、作品圖、{ 作品介紹 }，左右箭頭切換作品
 // 使用原生 <dialog>：內建 Esc 關閉、焦點鎖定與背景不可互動
-const ProjectModal = ({ project, onClose, onPrev, onNext }) => {
+const ProjectModal = ({ project, views = null, onClose, onPrev, onNext }) => {
   const dialogRef = useRef(null);
 
   useEffect(() => {
@@ -45,7 +45,12 @@ const ProjectModal = ({ project, onClose, onPrev, onNext }) => {
             {" }"}
           </h2>
           <p className="project-modal-meta">
-            {[project.type, project.category.map(categoryLabel).join(" / "), project.period]
+            {[
+              project.type,
+              project.category.map(categoryLabel).join(" / "),
+              project.period,
+              views === null ? null : `瀏覽 ${views} 次`,
+            ]
               .filter(Boolean)
               .join(" · ")}
           </p>

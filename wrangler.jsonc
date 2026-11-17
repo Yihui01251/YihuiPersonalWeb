@@ -1,0 +1,32 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "yihuipersonalweb",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-06-01",
+  // 靜態檔由 Cloudflare 直接提供；只有 /api/* 會進到 Worker
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api/*"]
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "yihui-personal-web",
+      "database_id": "a9c952f0-477c-427a-8e84-eff2dd923469",
+      "migrations_dir": "migrations"
+    }
+  ],
+  // PR 分支的預覽部署（wrangler preview）要求明確宣告要用哪個資料庫
+  // 目前與正式環境共用同一個 D1；預覽部署不會套用 migration
+  "previews": {
+    "d1_databases": [
+      {
+        "binding": "DB",
+        "database_id": "a9c952f0-477c-427a-8e84-eff2dd923469"
+      }
+    ]
+  },
+  "observability": { "enabled": true }
+}
