@@ -18,5 +18,15 @@
       "migrations_dir": "migrations"
     }
   ],
+  // PR 分支的預覽部署（wrangler preview）要求明確宣告要用哪個資料庫
+  // 目前與正式環境共用同一個 D1；預覽部署不會套用 migration
+  "previews": {
+    "d1_databases": [
+      {
+        "binding": "DB",
+        "database_id": "a9c952f0-477c-427a-8e84-eff2dd923469"
+      }
+    ]
+  },
   "observability": { "enabled": true }
 }
