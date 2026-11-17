@@ -269,6 +269,8 @@ section {
 
 /* 手機版：頁首縮小、頁尾改單欄，避免水平捲動 */
 @media (max-width: 640px) {
+    $nav-bar-h: 56px;
+
     header {
         flex-direction: column;
         gap: 10px;
@@ -277,15 +279,56 @@ section {
     .logo {
         width: 110px;
     }
+
+    /* 選單改為固定在畫面下方的導覽列（單手好按），頁首只剩 logo */
     #topBar {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 100;
+        width: 100%;
         height: auto;
-        padding: 6px 4px;
+        padding: 0 4px env(safe-area-inset-bottom);
+        border-radius: 20px 20px 0 0;
+        background-color: $background-color-beach-white;
+        box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.18);
     }
     #menu {
-        gap: 14px;
-        a {
-            font-size: 0.95rem;
+        width: 100%;
+        height: $nav-bar-h;
+        gap: 0;
+        margin: 0;
+        justify-content: space-around;
+
+        li {
+            flex: 1 1 0;
+            min-width: 0;
         }
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: $nav-bar-h;
+            padding: 0;
+            font-size: 0.9rem;
+            letter-spacing: 0;
+            white-space: nowrap;
+
+            /* 底部導覽列不用底線（會貼在螢幕邊緣），目前頁面改用上緣色條標示 */
+            &,
+            &:hover {
+                border-bottom: none;
+            }
+            &.nav-link--active {
+                border-bottom: none;
+                background: linear-gradient($color-wave, $color-wave) top center / 28px 3px no-repeat;
+            }
+        }
+    }
+    /* 導覽列會蓋住頁面最底部，留出等高的空間給頁尾 */
+    #root {
+        padding-bottom: calc(#{$nav-bar-h} + env(safe-area-inset-bottom));
     }
     footer {
         grid-template-columns: 1fr;
