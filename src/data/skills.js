@@ -7,8 +7,8 @@ export const skillGroups = [
   },
   {
     key: "backend",
-    label: "後端 / 全端",
-    items: ["Node.js", "Nuxt Server Routes (Nitro)", "REST API", "C#"],
+    label: "後端（延伸中）",
+    items: ["Node.js", "Nuxt Server Routes (Nitro)", "REST API"],
   },
   {
     key: "quality",
