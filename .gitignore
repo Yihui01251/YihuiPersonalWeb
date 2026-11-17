@@ -21,3 +21,13 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# vite
+/dist
+
+# 由 scripts/subset-font.mjs 產生
+/src/assets/fonts/GenJyuuGothic-subset.woff2
+
+# cloudflare
+.wrangler
+.dev.vars

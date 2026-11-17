@@ -32,8 +32,8 @@ export const notes = [
     category: "fullstack",
     type: "bugfix",
     date: "2026-03",
-    stack: ["Nuxt3", "WAF", "OWASP CRS"],
-    desc: "OWASP CRS 932120 把 Nuxt Icon 的批次請求判為攻擊。啟用 clientBundle.scan 讓前端從源頭不再發出請求，而不是放寬 WAF 規則。",
+    stack: ["Nuxt3", "WAF"],
+    desc: "WAF 把 Nuxt Icon 的批次請求判為攻擊。調整前端設定讓請求從源頭不再發出，而不是放寬 WAF 規則。",
   },
   {
     id: 13,
