@@ -16,7 +16,7 @@
         background-position: center top;
     }
     @media (max-width: 640px) {
-        padding: 40px 4vw 0;
+        padding: 40px max(20px, 4vw) 0;
         row-gap: 28px;
     }
 
@@ -88,11 +88,11 @@
 .aboutMe-content {
     display: flex;
     flex-direction: column;
-    row-gap: 40px;
+    row-gap: 56px;
     padding: 50px 0 80px;
 
     @media (max-width: 640px) {
-        row-gap: 28px;
+        row-gap: 40px;
         padding: 32px 0 50px;
     }
 }
@@ -102,7 +102,7 @@
     align-items: stretch;
 
     @media (max-width: 640px) {
-        padding: 0 4vw;
+        padding: 0 max(20px, 4vw);
     }
 }
 
@@ -148,6 +148,7 @@
         align-items: center;
         gap: 12px;
         font-size: 1.2rem;
+        line-height: 1.4;
         margin-bottom: 14px;
     }
     ul {
@@ -165,6 +166,7 @@
 }
 .strength-num {
     display: inline-flex;
+    flex-shrink: 0;
     align-items: center;
     justify-content: center;
     width: 36px;
@@ -329,6 +331,7 @@
     }
     h3 {
         font-size: 1.2rem;
+        line-height: 1.4;
         margin: 6px 0 12px;
     }
     ul {
@@ -368,7 +371,7 @@
 .ai-timeline {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 22px;
     padding-left: 22px;
     border-left: 3px solid #7ed3e6;
 
