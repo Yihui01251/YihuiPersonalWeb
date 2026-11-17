@@ -14,7 +14,7 @@
     {
       "binding": "DB",
       "database_name": "yihui-personal-web",
-      "database_id": "REPLACE_WITH_D1_DATABASE_ID",
+      "database_id": "a9c952f0-477c-427a-8e84-eff2dd923469",
       "migrations_dir": "migrations"
     }
   ],
